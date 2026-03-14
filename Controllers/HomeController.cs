@@ -23,6 +23,9 @@ public class HomeController : Controller
           "jobTitle": "Product Designer",
           "description": "Product Designer met ervaring in software engineering, software architectuur en administratieve SaaS software.",
           "image": "/assets/portrait/harmen-portrait-cutout.png",
+          "sameAs": [
+            "https://linkedin.com/in/harmen-van-der-meijden"
+          ],
           "knowsAbout": [
             "Product Design",
             "Software Engineering",

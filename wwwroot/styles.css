@@ -449,6 +449,16 @@ h5 {
   margin-top: 42px;
 }
 
+.question-grid,
+.case-grid,
+.career-summary-grid,
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 42px;
+}
+
 .focus-card {
   min-height: 240px;
   padding: 28px;
@@ -478,6 +488,52 @@ h5 {
 }
 
 .focus-card p:last-child {
+  color: #4d4556;
+}
+
+.question-card,
+.case-card,
+.career-summary-card,
+.faq-card {
+  min-height: 220px;
+  padding: 28px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 24px 56px rgba(30, 23, 16, 0.08);
+}
+
+.question-kicker,
+.case-kicker,
+.career-summary-kicker {
+  margin-bottom: 10px;
+  color: #d29100;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.question-card h3,
+.case-card h3,
+.faq-card h3 {
+  margin-bottom: 14px;
+  font-size: 30px;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+
+.career-summary-card h2 {
+  margin-bottom: 14px;
+  font-size: 34px;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+
+.question-card p:last-child,
+.case-card p:last-child,
+.career-summary-card p:last-child,
+.faq-card p:last-child {
   color: #4d4556;
 }
 
@@ -617,6 +673,10 @@ h5 {
 
 .loopbaan-hero {
   padding-bottom: 12px;
+}
+
+.career-summary-section {
+  padding-top: 0;
 }
 
 .story-timeline-page {
@@ -1634,6 +1694,10 @@ h5 {
   color: #4d4556;
 }
 
+.faq-section {
+  padding-top: 0;
+}
+
 .mini-contact {
   padding-top: 8px;
 }
@@ -1732,7 +1796,11 @@ h5 {
   .proof-grid,
   .results-grid,
   .focus-grid,
-  .deep-dive-grid {
+  .deep-dive-grid,
+  .question-grid,
+  .case-grid,
+  .career-summary-grid,
+  .faq-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1998,13 +2066,21 @@ h5 {
   .focus-card,
   .deep-dive-card,
   .mini-case-card,
-  .closing-card {
+  .closing-card,
+  .question-card,
+  .case-card,
+  .career-summary-card,
+  .faq-card {
     padding: 24px;
   }
 
   .featured-copy h3,
   .deep-dive-card h2,
-  .mini-case-card h2 {
+  .mini-case-card h2,
+  .career-summary-card h2,
+  .question-card h3,
+  .case-card h3,
+  .faq-card h3 {
     font-size: 28px;
     line-height: 1.08;
   }
