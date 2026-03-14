@@ -1,0 +1,47 @@
+@{
+    var title = ViewData["Title"] as string ?? "Harmen van der Meijden";
+    var description = ViewData["Description"] as string ?? "Portfolio van Harmen van der Meijden.";
+    var canonical = ViewData["Canonical"] as string ?? "https://www.harmenvandermeijden.nl/";
+    var ogTitle = ViewData["OgTitle"] as string ?? title;
+    var ogDescription = ViewData["OgDescription"] as string ?? description;
+    var ogImage = ViewData["OgImage"] as string ?? "/assets/portrait/harmen-portrait-cutout.png";
+    var structuredData = ViewData["StructuredData"] as string;
+}
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@title</title>
+    <meta name="description" content="@description" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#faf7ee" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="nl_NL" />
+    <meta property="og:title" content="@ogTitle" />
+    <meta property="og:description" content="@ogDescription" />
+    <meta property="og:image" content="@ogImage" />
+    <meta property="og:image:alt" content="Portret van Harmen van der Meijden" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="@ogTitle" />
+    <meta name="twitter:description" content="@ogDescription" />
+    <meta name="twitter:image" content="@ogImage" />
+    <link rel="canonical" href="@canonical" />
+    <link rel="icon" href="~/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/styles.css" asp-append-version="true" />
+    @if (!string.IsNullOrWhiteSpace(structuredData))
+    {
+        <script type="application/ld+json">
+            @Html.Raw(structuredData)
+        </script>
+    }
+</head>
+<body>
+    @RenderBody()
+    <script src="~/script.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

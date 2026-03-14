@@ -1,0 +1,17 @@
+@model ErrorViewModel
+@{
+    ViewData["Title"] = "Fout";
+    ViewData["Description"] = "Er ging iets mis bij het laden van de pagina.";
+}
+
+<main class="inner-main">
+    <section class="section inner-hero">
+        <p class="eyebrow">Fout</p>
+        <h1>Er ging iets mis</h1>
+        <p class="lead">De pagina kon niet correct worden geladen.</p>
+        @if (Model.ShowRequestId)
+        {
+            <p class="lead">Request ID: <code>@Model.RequestId</code></p>
+        }
+    </section>
+</main>
