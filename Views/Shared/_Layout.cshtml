@@ -44,6 +44,26 @@
     }
 </head>
 <body>
+    <header class="site-header shared-header">
+        <div class="container">
+            <div class="header-row">
+                <a class="brand" href="/" aria-label="Ga naar home">
+                    <span class="brand-mark">H</span>
+                    <span class="brand-text">
+                        <strong>Harmen van der Meijden</strong>
+                        <span>Product Designer</span>
+                    </span>
+                </a>
+                <nav class="header-actions site-nav" aria-label="Hoofdnavigatie">
+                    <a class="header-link" href="/">Home</a>
+                    <a class="header-link" href="/loopbaan">Loopbaan</a>
+                    <a class="header-link" href="/disc">DISC</a>
+                    <a class="header-link" href="/api-koppelingen">Expertise</a>
+                    <a class="header-link" href="mailto:info@harmenvandermeijden.nl">info@harmenvandermeijden.nl</a>
+                </nav>
+            </div>
+        </div>
+    </header>
     @RenderBody()
     <script src="~/script.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)

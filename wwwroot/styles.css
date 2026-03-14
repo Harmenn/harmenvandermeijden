@@ -100,7 +100,7 @@ h5 {
   line-height: 35px;
 }
 
-.home-header {
+.site-header {
   position: sticky;
   top: 0;
   z-index: 10;
@@ -109,7 +109,7 @@ h5 {
   pointer-events: none;
 }
 
-.home-header .container {
+.site-header .container {
   pointer-events: auto;
 }
 
@@ -1560,39 +1560,7 @@ h5 {
   display: block;
 }
 
-.site-header:not(.home-header) {
-  position: sticky;
-  top: 16px;
-  z-index: 20;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  width: min(calc(100% - 32px), var(--container));
-  margin: 16px auto 0;
-  padding: 14px 18px;
-  border: 1px solid rgba(255, 255, 255, 0.34);
-  border-radius: 999px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.18));
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  backdrop-filter: blur(20px) saturate(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-}
-
-.site-header:not(.home-header) .site-nav {
-  display: flex;
-  gap: 18px;
-}
-
-.site-header:not(.home-header) .site-nav a {
-  color: rgba(0, 0, 0, 0.76);
-}
-
-.site-header:not(.home-header) .site-nav a:hover {
-  color: #000;
-}
-
-.site-header:not(.home-header) .site-nav a[aria-current="page"] {
+.site-nav a[aria-current="page"] {
   font-weight: 700;
   color: #000;
 }
@@ -1984,7 +1952,7 @@ h5 {
 }
 
 @media (max-width: 768px) {
-  .home-header {
+  .site-header {
     padding-top: 12px;
     pointer-events: auto;
   }
@@ -2026,7 +1994,7 @@ h5 {
     font-size: 13px;
   }
 
-  .home-header .header-actions .header-link:last-child {
+  .header-actions .header-link:last-child {
     display: none;
   }
 
@@ -2211,21 +2179,12 @@ h5 {
     padding: 22px;
   }
 
-  .site-header:not(.home-header) {
-    width: min(calc(100% - 24px), var(--container));
-    border-radius: 28px;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
-    padding: 12px 14px;
-  }
-
-  .site-header:not(.home-header) .site-nav {
+  .site-nav {
     flex-wrap: wrap;
     gap: 10px 16px;
   }
 
-  .site-header:not(.home-header) .site-nav a {
+  .site-nav a {
     font-size: 14px;
   }
 }
