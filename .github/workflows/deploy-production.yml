@@ -20,6 +20,6 @@ jobs:
 
     steps:
       - name: Deploy pushed commit to IIS
-        shell: powershell
+        shell: cmd
         run: |
-          & "C:\inetpub\harmenvandermeijden.nl\.server\deploy.ps1" -TargetCommit "${{ github.sha }}"
+          powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\inetpub\harmenvandermeijden.nl\.server\deploy.ps1" -TargetCommit "${{ github.sha }}"
