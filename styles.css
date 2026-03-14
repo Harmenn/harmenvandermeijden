@@ -1475,6 +1475,82 @@ h5 {
   text-underline-offset: 3px;
 }
 
+.disc-summary-grid,
+.disc-metrics-grid,
+.disc-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.disc-columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.disc-summary-card,
+.disc-metric-card,
+.disc-note-card,
+.disc-panel-highlight {
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 22px 54px rgba(28, 22, 17, 0.08);
+}
+
+.disc-summary-card,
+.disc-metric-card {
+  min-height: 220px;
+  padding: 28px;
+}
+
+.disc-note-card {
+  padding: 34px;
+}
+
+.disc-kicker {
+  margin-bottom: 10px;
+  color: #d29100;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.disc-summary-card h2,
+.disc-note-card h2 {
+  margin-bottom: 14px;
+  font-size: 34px;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+
+.disc-metric-card h3 {
+  margin-bottom: 14px;
+  font-size: 30px;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.disc-list {
+  padding-left: 18px;
+}
+
+.disc-list li + li {
+  margin-top: 10px;
+}
+
+.disc-panel-highlight {
+  padding: 30px;
+}
+
+.disc-panel-highlight p + p {
+  margin-top: 14px;
+}
+
+.disc-note-section {
+  padding-top: 24px;
+}
+
 @media (max-width: 1200px) {
   .hero-inner {
     grid-template-columns: minmax(0, 1fr) minmax(320px, 0.86fr);
@@ -1483,6 +1559,12 @@ h5 {
 
   .proof-grid,
   .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .disc-summary-grid,
+  .disc-metrics-grid,
+  .disc-columns {
     grid-template-columns: 1fr;
   }
 

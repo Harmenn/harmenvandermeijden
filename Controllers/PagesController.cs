@@ -22,7 +22,7 @@ public class PagesController : Controller
     {
         SetPageMeta(
             title: "DISC-resultaten | Harmen van der Meijden",
-            description: "DISC-profiel van Harmen van der Meijden. Binnenkort aangevuld met inzichten over samenwerking, leiderschap en communicatie.",
+            description: "DISC-profiel van Harmen van der Meijden: Uitdager (DC) met in de praktijk een sterke analytische, systematische en kwaliteitsgerichte blauwe component.",
             canonical: "https://www.harmenvandermeijden.nl/disc");
         return View();
     }
