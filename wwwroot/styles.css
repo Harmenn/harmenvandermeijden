@@ -200,17 +200,18 @@ h5 {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(340px, 0.7fr);
-  gap: 40px;
+  width: min(calc(100% - 24px), 1388px);
+  max-width: 1388px;
+  grid-template-columns: minmax(0, 1.46fr) minmax(300px, 0.54fr);
+  gap: 26px;
   align-items: center;
-  width: 100%;
 }
 
 .hero-copy {
   width: 100%;
   max-width: none;
   padding-top: 12px;
-  padding-right: 8px;
+  padding-right: 0;
 }
 
 .pre-heading {
@@ -225,14 +226,14 @@ h5 {
 
 .hero .intro {
   margin-top: 36px;
-  max-width: 840px;
+  max-width: 900px;
   color: #2e2734;
   font-size: 18px;
   line-height: 1.72;
 }
 
 .hero-support {
-  max-width: 820px;
+  max-width: 880px;
   margin-top: 18px;
   color: #5f5667;
   font-size: 17px;
@@ -312,7 +313,7 @@ h5 {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 480px;
+  max-width: 430px;
   margin-left: auto;
   height: min(66vh, 680px);
   min-height: 500px;
