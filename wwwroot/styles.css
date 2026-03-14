@@ -1953,15 +1953,17 @@ h5 {
 
 @media (max-width: 768px) {
   .site-header {
-    padding-top: 12px;
+    padding-top: 10px;
     pointer-events: auto;
   }
 
   .header-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 12px 14px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    padding: 12px 14px 10px;
     border-radius: 24px;
   }
 
@@ -1985,7 +1987,7 @@ h5 {
 
   .header-actions {
     width: 100%;
-    gap: 12px 18px;
+    gap: 8px 16px;
     justify-content: flex-start;
     flex-wrap: wrap;
   }
@@ -1999,20 +2001,36 @@ h5 {
   }
 
   .hero {
-    padding: 28px 0 52px;
+    padding: 22px 0 48px;
+  }
+
+  .hero-inner {
+    position: relative;
+    gap: 16px;
+  }
+
+  .hero-copy {
+    position: relative;
+    z-index: 2;
+    padding-right: 132px;
+  }
+
+  .pre-heading {
+    margin-bottom: 10px;
+    font-size: 30px;
+    line-height: 1.04;
+    letter-spacing: -0.04em;
   }
 
   .hero-badges {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    margin-top: 28px;
+    gap: 10px;
+    margin-top: 22px;
   }
 
   .big-title,
   .inner-hero h1 {
-    font-size: 32px;
-    line-height: 1.02;
+    font-size: 29px;
+    line-height: 0.98;
   }
 
   h2 {
@@ -2024,6 +2042,18 @@ h5 {
   .lead {
     font-size: 18px;
     line-height: 30px;
+  }
+
+  .hero .intro {
+    margin-top: 18px;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .hero-support {
+    margin-top: 14px;
+    font-size: 15px;
+    line-height: 1.6;
   }
 
   .button {
@@ -2054,14 +2084,51 @@ h5 {
   }
 
   .hero-image {
-    height: 28vh;
-    min-height: 220px;
-    max-width: 320px;
-    margin-top: 8px;
+    position: absolute;
+    top: 6px;
+    right: 0;
+    width: 126px;
+    height: 164px;
+    min-height: 0;
+    max-width: none;
+    margin-top: 0;
+    pointer-events: none;
   }
 
   .pre-heading {
     max-width: none;
+  }
+
+  .hero-image::before {
+    inset: 8% 4% 6% 4%;
+    filter: blur(10px);
+  }
+
+  .hero-image::after {
+    inset: 10% 0 10% 0;
+  }
+
+  .hero-image img {
+    object-position: center top;
+    filter: saturate(0.98) contrast(1.02) drop-shadow(0 14px 20px rgba(29, 22, 12, 0.14));
+  }
+
+  .hero-badge {
+    padding: 8px 12px 8px 8px;
+    gap: 10px;
+  }
+
+  .hero-badge img {
+    width: 44px;
+    height: 32px;
+  }
+
+  .hero-actions {
+    margin-top: 20px;
+  }
+
+  .hero-actions .button {
+    min-height: 48px;
   }
 
   .about-grid,
