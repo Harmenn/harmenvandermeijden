@@ -4,7 +4,7 @@
     var canonical = ViewData["Canonical"] as string ?? "https://www.harmenvandermeijden.nl/";
     var ogTitle = ViewData["OgTitle"] as string ?? title;
     var ogDescription = ViewData["OgDescription"] as string ?? description;
-    var ogImage = ViewData["OgImage"] as string ?? "/assets/portrait/harmen-portrait-cutout.png";
+    var ogImage = ViewData["OgImage"] as string ?? "https://www.harmenvandermeijden.nl/assets/social/og-harmen-site.png";
     var structuredData = ViewData["StructuredData"] as string;
 }
 <!DOCTYPE html>
@@ -21,11 +21,15 @@
     <meta property="og:title" content="@ogTitle" />
     <meta property="og:description" content="@ogDescription" />
     <meta property="og:image" content="@ogImage" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:alt" content="Portret van Harmen van der Meijden" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="@ogTitle" />
     <meta name="twitter:description" content="@ogDescription" />
     <meta name="twitter:image" content="@ogImage" />
+    <meta name="twitter:image:alt" content="Portret van Harmen van der Meijden" />
     <link rel="canonical" href="@canonical" />
     <link rel="icon" href="~/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
