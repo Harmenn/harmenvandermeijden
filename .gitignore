@@ -3,9 +3,13 @@
 *.jpeg
 *.webp
 !assets/**
+!wwwroot/assets/**
 !favicon.svg
+!wwwroot/favicon.svg
 !robot-wedstrijd-prijs.jpg
 !rate-my-teacher.jpg
+!wwwroot/robot-wedstrijd-prijs.jpg
+!wwwroot/rate-my-teacher.jpg
 
 .DS_Store
 Thumbs.db
