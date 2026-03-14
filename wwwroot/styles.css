@@ -200,8 +200,8 @@ h5 {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, 1.18fr) minmax(360px, 0.82fr);
-  gap: 64px;
+  grid-template-columns: minmax(0, 1.3fr) minmax(340px, 0.7fr);
+  gap: 40px;
   align-items: center;
   width: 100%;
 }
@@ -210,11 +210,12 @@ h5 {
   width: 100%;
   max-width: none;
   padding-top: 12px;
+  padding-right: 8px;
 }
 
 .pre-heading {
   margin-bottom: 12px;
-  max-width: 24ch;
+  max-width: none;
   color: #6b6272;
 }
 
@@ -224,14 +225,14 @@ h5 {
 
 .hero .intro {
   margin-top: 36px;
-  max-width: 760px;
+  max-width: 840px;
   color: #2e2734;
   font-size: 18px;
   line-height: 1.72;
 }
 
 .hero-support {
-  max-width: 720px;
+  max-width: 820px;
   margin-top: 18px;
   color: #5f5667;
   font-size: 17px;
@@ -311,7 +312,7 @@ h5 {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 500px;
+  max-width: 480px;
   margin-left: auto;
   height: min(66vh, 680px);
   min-height: 500px;
