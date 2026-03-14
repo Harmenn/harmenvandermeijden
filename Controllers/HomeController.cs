@@ -10,10 +10,10 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         ViewData["Title"] = "Harmen van der Meijden | Product Designer";
-        ViewData["Description"] = "Portfolio van Harmen van der Meijden, Product Designer met een achtergrond in software engineering, software architectuur en administratieve SaaS software.";
+        ViewData["Description"] = "Portfolio van Harmen van der Meijden: Product Designer met een achtergrond in software engineering, architectuur, administratieve SaaS en operationeel leiderschap.";
         ViewData["Canonical"] = "https://www.harmenvandermeijden.nl/";
         ViewData["OgTitle"] = "Harmen van der Meijden | Product Designer";
-        ViewData["OgDescription"] = "Product Designer met een achtergrond in software engineering, software architectuur en administratieve SaaS software.";
+        ViewData["OgDescription"] = "Product Designer met een achtergrond in software engineering, architectuur, administratieve SaaS en operationeel leiderschap.";
         ViewData["OgImage"] = "/assets/portrait/harmen-portrait-cutout.png";
         ViewData["StructuredData"] = """
         {

@@ -4,6 +4,18 @@ namespace PortfolioSite.Controllers;
 
 public class PagesController : Controller
 {
+    [HttpGet("loopbaan")]
+    [HttpGet("cv")]
+    [HttpGet("loopbaan.html")]
+    public IActionResult Loopbaan()
+    {
+        SetPageMeta(
+            title: "Loopbaan en CV | Harmen van der Meijden",
+            description: "De loopbaan van Harmen van der Meijden: van vroege programmeerdrang via MBO, HBO, Independer en wehkamp naar Metafoor Software en operationeel leiderschap.",
+            canonical: "https://www.harmenvandermeijden.nl/loopbaan");
+        return View();
+    }
+
     [HttpGet("disc")]
     [HttpGet("disc.html")]
     public IActionResult Disc()
