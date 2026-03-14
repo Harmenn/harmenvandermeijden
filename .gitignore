@@ -1,0 +1,11 @@
+*.png
+*.jpg
+*.jpeg
+*.webp
+!assets/**
+!favicon.svg
+!robot-wedstrijd-prijs.jpg
+!rate-my-teacher.jpg
+
+.DS_Store
+Thumbs.db
