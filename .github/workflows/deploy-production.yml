@@ -1,0 +1,25 @@
+name: Deploy production
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on:
+      - self-hosted
+      - Windows
+      - X64
+      - harmenvandermeijden-prod
+
+    steps:
+      - name: Deploy pushed commit to IIS
+        shell: powershell
+        run: |
+          & "C:\inetpub\harmenvandermeijden.nl\.server\deploy.ps1" -TargetCommit "${{ github.sha }}"
