@@ -315,50 +315,69 @@ h5 {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 520px;
+  max-width: 560px;
   margin-left: auto;
   height: min(72vh, 760px);
-  min-height: 560px;
+  min-height: 540px;
   pointer-events: none;
   align-self: end;
-  transform: translate(10%, 8%);
+  transform: translate(8%, 4%);
   overflow: visible;
 }
 
 .hero-image::before {
   content: "";
   position: absolute;
-  inset: 2% -14% -12% -18%;
-  border-radius: 44% 56% 42% 58% / 30% 34% 66% 70%;
+  inset: 20% 14% 10% 6%;
+  z-index: 0;
+  border-radius: 48% 52% 42% 58% / 32% 34% 66% 68%;
   background:
-    radial-gradient(circle at 24% 34%, rgba(253, 189, 18, 0.16), rgba(253, 189, 18, 0) 34%),
-    radial-gradient(circle at 70% 52%, rgba(26, 188, 156, 0.1), rgba(26, 188, 156, 0) 30%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.82));
-  box-shadow: 0 34px 90px rgba(89, 72, 36, 0.1);
-  filter: blur(2px);
+    radial-gradient(circle at 32% 30%, rgba(253, 189, 18, 0.18), rgba(253, 189, 18, 0) 42%),
+    radial-gradient(circle at 72% 44%, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0) 56%),
+    radial-gradient(circle at 56% 72%, rgba(26, 188, 156, 0.08), rgba(26, 188, 156, 0) 34%);
+  filter: blur(24px);
+  opacity: 0.72;
 }
 
 .hero-image::after {
   content: "";
   position: absolute;
-  inset: 12% -2% 18% 14%;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at center, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0) 72%);
-  opacity: 0.95;
-  filter: blur(12px);
+  inset: 14% 14% 6% 18%;
+  z-index: 1;
+  border-radius: 38% 62% 34% 66% / 18% 20% 80% 82%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 243, 236, 0.9));
+  box-shadow: 0 28px 72px rgba(92, 75, 43, 0.08);
+}
+
+.hero-image-accent {
+  display: none;
+}
+
+.hero-image-portrait {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  border-radius: 38% 62% 34% 66% / 18% 20% 80% 82%;
+  background: transparent;
+  box-shadow: none;
+}
+
+.hero-image-portrait::before {
+  content: none;
 }
 
 .hero-image img {
-  position: relative;
+  position: absolute;
+  inset: -1% -10% -3% -16%;
   z-index: 2;
-  width: 118%;
+  width: auto;
+  min-width: 126%;
   max-width: none;
-  height: 112%;
-  object-fit: contain;
+  height: 106%;
+  object-fit: cover;
   object-position: center top;
-  transform: translate(4%, 6%);
-  filter: saturate(0.98) contrast(1.03) drop-shadow(0 28px 36px rgba(29, 22, 12, 0.16));
+  filter: saturate(1.02) contrast(1.01);
 }
 
 .about-section,
@@ -1772,9 +1791,9 @@ h5 {
   }
 
   .hero-image {
-    max-width: 460px;
-    min-height: 500px;
-    transform: translate(4%, 5%);
+    max-width: 500px;
+    min-height: 480px;
+    transform: translate(4%, 4%);
   }
 
   .proof-grid,
@@ -1812,7 +1831,7 @@ h5 {
 
   .hero-image {
     min-height: 440px;
-    height: min(58vh, 560px);
+    height: min(56vh, 520px);
   }
 
   .story-timeline {
@@ -1844,14 +1863,20 @@ h5 {
 
   .hero-image {
     width: 100%;
-    height: 46vh;
+    height: min(64vw, 460px);
     min-height: 320px;
     max-width: 420px;
     margin: 0 auto;
+    transform: none;
   }
 
   .hero-image::before {
-    inset: 10% 10% 10% 10%;
+    inset: 22% 16% 12% 8%;
+  }
+
+  .hero-image::after,
+  .hero-image-portrait {
+    border-radius: 36% 64% 34% 66% / 18% 22% 78% 82%;
   }
 
   .about-grid,
@@ -2028,7 +2053,7 @@ h5 {
   .hero-copy {
     position: relative;
     z-index: 2;
-    padding-right: 132px;
+    padding-right: 138px;
   }
 
   .pre-heading {
@@ -2101,14 +2126,15 @@ h5 {
 
   .hero-image {
     position: absolute;
-    top: 6px;
+    top: 8px;
     right: 0;
-    width: 126px;
-    height: 164px;
+    width: 128px;
+    height: 168px;
     min-height: 0;
     max-width: none;
     margin-top: 0;
     pointer-events: none;
+    transform: none;
   }
 
   .pre-heading {
@@ -2116,17 +2142,24 @@ h5 {
   }
 
   .hero-image::before {
-    inset: 8% 4% 6% 4%;
-    filter: blur(10px);
+    inset: 24% 18% 14% 10%;
+    filter: blur(14px);
+  }
+
+  .hero-image::after,
+  .hero-image-portrait {
+    border-radius: 34% 66% 36% 64% / 14% 18% 82% 86%;
   }
 
   .hero-image::after {
-    inset: 10% 0 10% 0;
+    inset: 16% 16% 8% 20%;
   }
 
   .hero-image img {
-    object-position: center top;
-    filter: saturate(0.98) contrast(1.02) drop-shadow(0 14px 20px rgba(29, 22, 12, 0.14));
+    inset: 0 -14% -2% -24%;
+    width: auto;
+    min-width: 150%;
+    height: 102%;
   }
 
   .hero-badge {
