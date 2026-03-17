@@ -3,5 +3,6 @@ Thumbs.db
 bin/
 obj/
 .mvc-temp/
+.idea/
 playwright/*
 !playwright/.gitkeep
