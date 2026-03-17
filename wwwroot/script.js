@@ -1,6 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const isHomepage = document.querySelector(".home-main");
+  const siteHeader = document.querySelector(".site-header");
+  const headerRow = document.querySelector(".header-row");
+  const headerActions = document.querySelector(".header-actions");
+
+  let mobileNavToggle = document.querySelector(".mobile-nav-toggle");
+
+  if (siteHeader && headerRow && headerActions && !mobileNavToggle) {
+    mobileNavToggle = document.createElement("button");
+    mobileNavToggle.className = "mobile-nav-toggle";
+    mobileNavToggle.type = "button";
+    mobileNavToggle.setAttribute("aria-expanded", "false");
+    mobileNavToggle.setAttribute("aria-label", "Open navigatiemenu");
+    mobileNavToggle.innerHTML = "<span></span><span></span><span></span>";
+    headerActions.id = headerActions.id || "site-menu";
+    mobileNavToggle.setAttribute("aria-controls", headerActions.id);
+    headerRow.insertBefore(mobileNavToggle, headerActions);
+  }
 
   if (!prefersReducedMotion) {
     requestAnimationFrame(() => {
@@ -42,6 +59,45 @@ document.addEventListener("DOMContentLoaded", () => {
       link.setAttribute("aria-current", "page");
     }
   });
+
+  const closeMobileNav = () => {
+    if (!siteHeader || !mobileNavToggle) {
+      return;
+    }
+
+    siteHeader.classList.remove("is-mobile-menu-open");
+    mobileNavToggle.setAttribute("aria-expanded", "false");
+  };
+
+  if (mobileNavToggle && siteHeader && headerActions) {
+    mobileNavToggle.addEventListener("click", () => {
+      const willOpen = !siteHeader.classList.contains("is-mobile-menu-open");
+      siteHeader.classList.toggle("is-mobile-menu-open", willOpen);
+      mobileNavToggle.setAttribute("aria-expanded", String(willOpen));
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!siteHeader.classList.contains("is-mobile-menu-open")) {
+        return;
+      }
+
+      if (siteHeader.contains(event.target)) {
+        return;
+      }
+
+      closeMobileNav();
+    });
+
+    links.forEach((link) => {
+      link.addEventListener("click", closeMobileNav);
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        closeMobileNav();
+      }
+    });
+  }
 
   const cvItems = document.querySelectorAll(".cv-item");
   cvItems.forEach((item) => {
@@ -125,6 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeLightbox();
+      closeMobileNav();
     }
   });
 
