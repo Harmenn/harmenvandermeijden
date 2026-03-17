@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 72">
-  <rect width="220" height="72" rx="18" fill="#ffffff"/>
-  <rect x="18" y="18" width="36" height="36" rx="10" fill="#fdbd12"/>
-  <path d="M27 28h10c6 0 10 3 10 8 0 4-2 6-5 7 4 1 6 3 6 8 0 6-4 10-12 10H27V28z" fill="#111"/>
-  <text x="66" y="44" fill="#111" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">BRIXXonline</text>
-</svg>

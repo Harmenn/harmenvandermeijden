@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (!prefersReducedMotion) {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        document.body.classList.add("is-loaded");
+      });
+    });
+  }
+
   const links = document.querySelectorAll(".site-nav a");
   const normalizePath = (value) => {
     if (!value) {

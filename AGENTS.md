@@ -79,6 +79,13 @@ Belangrijke gebieden:
 
 Wijzigingen aan markup, styling en assets moeten zorgvuldig gebeuren, zodat bestaande uitstraling, routes en SEO-structuur niet onnodig breken.
 
+## Playwright Profiel
+
+- Gebruik voor lokale Playwright-sessies altijd een eigen profielmap in `./playwright`.
+- Hergebruik geen gedeeld of al draaiend browserprofiel van andere tools, users of sessies.
+- Als een Playwright workflow om een user data dir vraagt, gebruik dan `C:/dev/harmenvandermeijden/playwright`.
+- Ga ervan uit dat deze map lokaal stateful mag zijn, maar niet in git thuishoort.
+
 ## Bij Reviews En Wijzigingen
 
 - Wees direct en kritisch als iets visueel, inhoudelijk of technisch onder de maat is.

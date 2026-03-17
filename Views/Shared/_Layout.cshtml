@@ -54,13 +54,23 @@
                         <span>Product Designer</span>
                     </span>
                 </a>
-                <nav class="header-actions site-nav" aria-label="Hoofdnavigatie">
-                    <a class="header-link" href="/">Home</a>
-                    <a class="header-link" href="/loopbaan">Loopbaan</a>
-                    <a class="header-link" href="/disc">DISC</a>
-                    <a class="header-link" href="/api-koppelingen">Expertise</a>
-                    <a class="header-link" href="mailto:info@harmenvandermeijden.nl">info@harmenvandermeijden.nl</a>
-                </nav>
+                <div class="header-actions">
+                    <nav class="site-nav" aria-label="Hoofdnavigatie">
+                        <a class="header-link" href="/">Home</a>
+                        <a class="header-link" href="/loopbaan">Over mij</a>
+                        <details class="nav-dropdown">
+                            <summary class="header-link">Diensten</summary>
+                            <div class="nav-dropdown-menu">
+                                <a class="nav-dropdown-link" href="/api-koppelingen">API-koppelingen</a>
+                                <a class="nav-dropdown-link" href="/ai-integratie">AI-integratie</a>
+                                <a class="nav-dropdown-link" href="/change-management">Change management</a>
+                            </div>
+                        </details>
+                        <a class="header-link" href="https://linkedin.com/in/harmen-van-der-meijden">Review</a>
+                        <a class="header-link" href="/#contact">Contact</a>
+                    </nav>
+                    <a class="button button-primary header-cta" href="mailto:info@harmenvandermeijden.nl?subject=Vrijblijvende%20kennismaking">Vrijblijvende kennismaking</a>
+                </div>
             </div>
         </div>
     </header>

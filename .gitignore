@@ -16,3 +16,5 @@ Thumbs.db
 bin/
 obj/
 .mvc-temp/
+playwright/*
+!playwright/.gitkeep
