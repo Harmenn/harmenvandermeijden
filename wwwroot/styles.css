@@ -1052,33 +1052,11 @@ h5 {
 
 .approach-section {
   position: relative;
+  padding-top: 24px;
 }
 
 .approach-section::before {
-  content: "";
-  position: absolute;
-  top: 130px;
-  left: 50%;
-  width: min(1120px, calc(100% - 48px));
-  height: calc(100% - 180px);
-  border-radius: 48px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.56), rgba(255, 255, 255, 0.18)),
-    radial-gradient(circle at top left, rgba(253, 189, 18, 0.08), transparent 38%);
-  border: 1px solid rgba(255, 255, 255, 0.56);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  transform: translateX(-50%);
-  pointer-events: none;
-}
-
-.approach-section .section-intro {
-  position: relative;
-  z-index: 1;
-  max-width: 920px;
-}
-
-.approach-section .section-intro h2 {
-  max-width: 17ch;
+  content: none;
 }
 
 .approach-stack {
@@ -1086,7 +1064,12 @@ h5 {
   z-index: 1;
   counter-reset: approach;
   gap: 38px;
-  margin-top: 52px;
+  margin-top: 28px;
+}
+
+.approach-section > .container {
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .approach-card {
@@ -2573,17 +2556,8 @@ h5 {
   }
 
   .about-section .section-intro h2,
-  .about-section .section-intro .large-paragraph,
-  .approach-section .section-intro h2 {
+  .about-section .section-intro .large-paragraph {
     max-width: none;
-  }
-
-  .approach-section::before {
-    left: 24px;
-    right: 24px;
-    width: auto;
-    height: calc(100% - 200px);
-    transform: none;
   }
 
   .approach-card,
@@ -2603,6 +2577,11 @@ h5 {
   .featured-card img,
   .featured-card-alt img {
     transform: none;
+  }
+
+  .approach-section > .container {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
