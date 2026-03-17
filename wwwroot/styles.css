@@ -1823,6 +1823,232 @@ h5 {
   background: #fdbd12;
 }
 
+.loopbaan-page .loopbaan-hero {
+  max-width: 960px;
+  padding-bottom: 36px;
+}
+
+.career-zigzag-section {
+  padding-top: 12px;
+}
+
+.career-zigzag-intro {
+  max-width: 760px;
+  margin-bottom: 56px;
+}
+
+.career-zigzag-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 8px 14px;
+  border: 1px solid rgba(39, 27, 12, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 251, 244, 0.88);
+  color: #7d5800;
+  box-shadow: 0 12px 24px rgba(45, 31, 12, 0.05);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.career-zigzag-kicker::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #fdbd12;
+}
+
+.career-zigzag-intro h2 {
+  max-width: 18ch;
+  margin-bottom: 18px;
+  font-size: clamp(40px, 4.8vw, 64px);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+}
+
+.career-zigzag-intro p:last-child {
+  max-width: 62ch;
+  color: #5a5054;
+  font-size: 18px;
+  line-height: 1.72;
+}
+
+.career-zigzag {
+  position: relative;
+  display: grid;
+  gap: 38px;
+  width: min(100%, 1320px);
+  margin: 0 auto;
+  padding: 8px 0 0;
+}
+
+.career-zigzag::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(253, 189, 18, 0.72), rgba(253, 189, 18, 0.12));
+  transform: translateX(-50%);
+}
+
+.career-step {
+  position: relative;
+  display: grid;
+  width: calc(50% - 34px);
+}
+
+.career-step.is-left {
+  justify-self: start;
+}
+
+.career-step.is-right {
+  justify-self: end;
+}
+
+.career-step::before {
+  content: "";
+  position: absolute;
+  top: 38px;
+  width: 16px;
+  height: 16px;
+  border: 4px solid #fdbd12;
+  border-radius: 50%;
+  background: #faf7ee;
+  box-shadow: 0 0 0 8px rgba(250, 247, 238, 0.95);
+}
+
+.career-step.is-left::before {
+  right: -42px;
+}
+
+.career-step.is-right::before {
+  left: -42px;
+}
+
+.career-step-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 0 2px;
+}
+
+.career-step-period {
+  color: #201c24;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.career-step-place {
+  color: #8b8088;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.career-step-card {
+  position: relative;
+  min-height: 0;
+  padding: 30px 116px 30px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(245, 241, 233, 0.88));
+  box-shadow: 0 24px 60px rgba(41, 31, 18, 0.08);
+}
+
+.career-step-kicker {
+  margin-bottom: 10px;
+  color: #8d819d;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.career-step-card h3 {
+  max-width: 16ch;
+  margin-bottom: 14px;
+  font-size: clamp(32px, 3.2vw, 44px);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+}
+
+.career-step-card > p {
+  max-width: 42ch;
+  color: #302931;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.career-step-points {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.career-step-points li {
+  position: relative;
+  padding-left: 18px;
+  color: #5b5462;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.career-step-points li + li {
+  margin-top: 6px;
+}
+
+.career-step-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fdbd12;
+}
+
+.career-step-mark {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 88px;
+  height: 88px;
+  padding: 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  object-fit: contain;
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.08);
+  transform: rotate(4deg);
+}
+
+.career-step-mark-word {
+  width: 138px;
+  height: 72px;
+  padding: 16px 18px;
+}
+
+.career-step-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.career-step-gallery .story-figure img {
+  box-shadow: 0 18px 38px rgba(28, 22, 17, 0.12);
+}
+
 .cv-list {
   margin: 0;
   padding: 0;
@@ -2394,6 +2620,10 @@ h5 {
   padding: 40px 0 80px;
 }
 
+.inner-main:not(.loopbaan-page) {
+  width: min(calc(100% - 32px), 1120px);
+}
+
 .section + .section {
   margin-top: 28px;
 }
@@ -2401,6 +2631,13 @@ h5 {
 .inner-hero {
   display: block;
   padding: 80px 0 40px;
+}
+
+.inner-main:not(.loopbaan-page) .inner-hero {
+  display: block;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 88px 0 28px;
 }
 
 .inner-hero .eyebrow {
@@ -2424,12 +2661,27 @@ h5 {
   font-weight: 700;
 }
 
+.inner-main:not(.loopbaan-page) .inner-hero h1 {
+  max-width: 12ch;
+  font-size: clamp(44px, 5.6vw, 68px);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
 .lead {
   max-width: 760px;
   margin-top: 24px;
   font-size: 21px;
   line-height: 35px;
   color: #000;
+}
+
+.inner-main:not(.loopbaan-page) .lead {
+  max-width: 38ch;
+  margin-top: 22px;
+  font-size: 20px;
+  line-height: 1.72;
+  color: #2d2730;
 }
 
 .inner-hero-art {
@@ -2440,10 +2692,35 @@ h5 {
   box-shadow: var(--shadow);
 }
 
+.inner-main:not(.loopbaan-page) .inner-hero-art {
+  width: min(100%, 720px);
+  max-width: none;
+  margin-top: 30px;
+  padding: 36px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(255, 252, 247, 0.82), rgba(244, 239, 229, 0.92));
+  box-shadow: 0 24px 60px rgba(28, 22, 17, 0.08);
+}
+
 .prose-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
+}
+
+.inner-main:not(.loopbaan-page) .prose-grid,
+.inner-main:not(.loopbaan-page) .deep-dive-grid,
+.inner-main:not(.loopbaan-page) .faq-grid,
+.inner-main:not(.loopbaan-page) .mini-case-strip {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.inner-main:not(.loopbaan-page) .prose-grid,
+.inner-main:not(.loopbaan-page) .deep-dive-grid,
+.inner-main:not(.loopbaan-page) .faq-grid {
+  grid-template-columns: 1fr;
+  gap: 18px;
 }
 
 .prose-grid .panel {
@@ -2452,6 +2729,45 @@ h5 {
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.74);
   box-shadow: 0 18px 42px rgba(28, 22, 17, 0.08);
+}
+
+.inner-main:not(.loopbaan-page) .prose-grid .panel,
+.inner-main:not(.loopbaan-page) .deep-dive-card,
+.inner-main:not(.loopbaan-page) .mini-case-card,
+.inner-main:not(.loopbaan-page) .faq-card {
+  padding: 36px 40px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(246, 241, 232, 0.88));
+  box-shadow: 0 22px 54px rgba(28, 22, 17, 0.08);
+}
+
+.inner-main:not(.loopbaan-page) .prose-grid .panel h2,
+.inner-main:not(.loopbaan-page) .deep-dive-card h2,
+.inner-main:not(.loopbaan-page) .mini-case-card h2 {
+  max-width: 20ch;
+  margin-bottom: 14px;
+  font-size: clamp(32px, 3.4vw, 44px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.inner-main:not(.loopbaan-page) .prose-grid .panel p,
+.inner-main:not(.loopbaan-page) .deep-dive-card p:last-child,
+.inner-main:not(.loopbaan-page) .mini-case-card p:last-child,
+.inner-main:not(.loopbaan-page) .faq-card p:last-child,
+.inner-main:not(.loopbaan-page) .disc-list {
+  max-width: 62ch;
+  color: #433b46;
+  font-size: 17px;
+  line-height: 1.72;
+}
+
+.inner-main:not(.loopbaan-page) .disc-list {
+  margin-top: 18px;
+}
+
+.inner-main:not(.loopbaan-page) .disc-list li + li {
+  margin-top: 10px;
 }
 
 .deep-dive-grid {
@@ -2488,12 +2804,40 @@ h5 {
   padding-top: 0;
 }
 
+.inner-main:not(.loopbaan-page) .faq-section .section-intro {
+  max-width: 980px;
+  margin: 0 auto 18px;
+}
+
+.inner-main:not(.loopbaan-page) .faq-section .section-intro h2 {
+  max-width: 16ch;
+  text-align: left;
+}
+
+.inner-main:not(.loopbaan-page) .faq-card h3 {
+  max-width: 24ch;
+  margin-bottom: 10px;
+  font-size: 28px;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+
 .mini-contact {
   padding-top: 8px;
 }
 
 .mini-contact p {
   color: #4f4a54;
+}
+
+.inner-main:not(.loopbaan-page) .mini-contact {
+  max-width: 980px;
+  margin: 0 auto;
+  padding-top: 0;
+}
+
+.inner-main:not(.loopbaan-page) .mini-contact p {
+  font-size: 15px;
 }
 
 .mini-contact a {
@@ -2578,6 +2922,44 @@ h5 {
 }
 
 @media (max-width: 992px) {
+  .inner-main:not(.loopbaan-page) .inner-hero h1,
+  .inner-main:not(.loopbaan-page) .lead {
+    max-width: none;
+  }
+
+  .career-zigzag-intro {
+    margin-bottom: 42px;
+  }
+
+  .career-zigzag-intro h2 {
+    max-width: 14ch;
+    font-size: clamp(34px, 7vw, 52px);
+  }
+
+  .career-zigzag::before {
+    left: 18px;
+    transform: none;
+  }
+
+  .career-step,
+  .career-step.is-left,
+  .career-step.is-right {
+    width: 100%;
+    justify-self: stretch;
+    padding-left: 42px;
+  }
+
+  .career-step::before,
+  .career-step.is-left::before,
+  .career-step.is-right::before {
+    left: 10px;
+    right: auto;
+  }
+
+  .career-step-card {
+    padding-right: 132px;
+  }
+
   .about-section .section-intro {
     grid-template-columns: 1fr;
     gap: 18px;
@@ -2895,6 +3277,82 @@ h5 {
 }
 
 @media (max-width: 768px) {
+  .inner-main:not(.loopbaan-page) .inner-hero {
+    padding: 72px 0 20px;
+  }
+
+  .inner-main:not(.loopbaan-page) .inner-hero-art,
+  .inner-main:not(.loopbaan-page) .prose-grid .panel,
+  .inner-main:not(.loopbaan-page) .deep-dive-card,
+  .inner-main:not(.loopbaan-page) .mini-case-card,
+  .inner-main:not(.loopbaan-page) .faq-card {
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .inner-main:not(.loopbaan-page) .prose-grid .panel h2,
+  .inner-main:not(.loopbaan-page) .deep-dive-card h2,
+  .inner-main:not(.loopbaan-page) .mini-case-card h2 {
+    max-width: none;
+    font-size: 30px;
+  }
+
+  .career-zigzag-intro {
+    margin-bottom: 34px;
+  }
+
+  .career-zigzag-intro h2 {
+    max-width: none;
+  }
+
+  .career-zigzag {
+    gap: 28px;
+  }
+
+  .career-step,
+  .career-step.is-left,
+  .career-step.is-right {
+    padding-left: 34px;
+  }
+
+  .career-step::before,
+  .career-step.is-left::before,
+  .career-step.is-right::before {
+    top: 30px;
+    left: 8px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .career-step-card {
+    padding: 22px 22px 22px 22px;
+  }
+
+  .career-step-mark,
+  .career-step-mark-word {
+    position: static;
+    display: block;
+    width: 72px;
+    height: 72px;
+    margin: 0 0 16px;
+    padding: 10px;
+    transform: none;
+  }
+
+  .career-step-card h3 {
+    max-width: none;
+    font-size: 30px;
+  }
+
+  .career-step-card > p {
+    max-width: none;
+    font-size: 16px;
+  }
+
+  .career-step-gallery {
+    grid-template-columns: 1fr;
+  }
+
   .site-header {
     padding-top: 4px;
     pointer-events: auto;
