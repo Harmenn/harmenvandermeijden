@@ -9,30 +9,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abcab660-54a3-4622-a675-7e8c1ca5d3ac" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AGENTS.md" beforeDir="false" afterPath="$PROJECT_DIR$/AGENTS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.harmenvandermeijden.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.harmenvandermeijden.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Home/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Pages/Loopbaan.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Pages/Loopbaan.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/logos/brixxonline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/logos/independer.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/logos/metafoor.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/logos/real/independer.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logos/real/independer.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/logos/real/vbsonline-metafoor-software.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/logos/real/wehkamp.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logos/real/wehkamp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/logos/vbsonline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/logos/wehkamp.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/assets/logos/brixxonline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/assets/logos/independer.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/assets/logos/metafoor.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/assets/logos/real/independer.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/assets/logos/real/independer.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/assets/logos/real/vbsonline-metafoor-software.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/assets/logos/real/wehkamp.png" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/assets/logos/real/wehkamp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/assets/logos/vbsonline.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/assets/logos/wehkamp.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/wwwroot/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wwwroot/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/styles.css" afterDir="false" />
     </list>
@@ -154,7 +135,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1773649584076</updated>
-      <workItem from="1773649584696" duration="14595000" />
+      <workItem from="1773649584696" duration="15220000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <option name="closed" value="true" />
@@ -172,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773671796839</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Opruiming">
+      <option name="closed" value="true" />
+      <created>1773740749092</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1773740749093</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +184,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Commit" />
     <MESSAGE value="Verbetering" />
-    <option name="LAST_COMMIT_MESSAGE" value="Verbetering" />
+    <MESSAGE value="Opruiming" />
+    <option name="LAST_COMMIT_MESSAGE" value="Opruiming" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
