@@ -3495,7 +3495,8 @@ h5 {
   }
 
   .hero {
-    padding: 6px 0 32px;
+    min-height: calc(100svh - 8px);
+    padding: 28px 0 0;
   }
 
   .logo-strip-inner {
@@ -3514,22 +3515,24 @@ h5 {
   .hero-inner {
     position: relative;
     grid-template-columns: 1fr;
-    gap: 18px;
-    min-height: 0;
+    grid-template-rows: auto auto;
+    align-content: start;
+    gap: 22px;
+    min-height: calc(100svh - 84px);
   }
 
   .hero-copy {
     position: relative;
     z-index: 2;
+    display: grid;
+    align-content: start;
+    gap: 16px;
     max-width: none;
     padding-right: 0;
   }
 
   .pre-heading {
-    margin-bottom: 10px;
-    font-size: 20px;
-    line-height: 1.04;
-    letter-spacing: -0.04em;
+    display: none;
   }
 
 .hero-badges {
@@ -3539,8 +3542,8 @@ h5 {
 
   .big-title,
   .inner-hero h1 {
-    font-size: 26px;
-    line-height: 1.02;
+    font-size: 32px;
+    line-height: 0.95;
   }
 
   h2 {
@@ -3555,9 +3558,10 @@ h5 {
   }
 
   .hero .intro {
-    margin-top: 18px;
-    font-size: 16px;
-    line-height: 1.65;
+    margin-top: 0;
+    max-width: none;
+    font-size: 15.5px;
+    line-height: 1.52;
   }
 
   .hero-support {
@@ -3601,31 +3605,28 @@ h5 {
     right: auto;
     order: 2;
     justify-self: center;
-    width: min(100%, 286px);
-    height: 332px;
+    align-self: start;
+    width: min(100%, 348px);
+    height: min(39svh, 368px);
     min-height: 0;
     max-width: none;
-    margin-top: 6px;
+    margin-top: 10px;
     margin-left: 0;
     pointer-events: none;
     transform: none;
   }
 
-  .pre-heading {
-    max-width: none;
-  }
-
   .hero-image-frame {
-    border-radius: 38% 62% 42% 58% / 16% 18% 82% 84%;
+    border-radius: 42% 58% 44% 56% / 14% 16% 84% 86%;
     transform: none;
   }
 
   .hero-image img {
-    width: 112%;
-    height: 112%;
+    width: 96%;
+    height: 100%;
     object-fit: contain;
-    object-position: center 72%;
-    transform: translateX(1%) translateY(5%);
+    object-position: center bottom;
+    transform: translateX(4%) translateY(2%);
   }
 
   .hero-badge {
