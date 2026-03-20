@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  initCanvasBackground(prefersReducedMotion);
+
   const links = document.querySelectorAll(".site-nav a");
   const normalizePath = (value) => {
     if (!value) {
@@ -214,21 +216,154 @@ document.addEventListener("DOMContentLoaded", () => {
 
     revealTargets.forEach((element) => revealObserver.observe(element));
 
-    const hero = document.querySelector(".hero");
-    if (hero) {
-      hero.addEventListener("pointermove", (event) => {
-        const bounds = hero.getBoundingClientRect();
-        const offsetX = (event.clientX - bounds.left) / bounds.width - 0.5;
-        const offsetY = (event.clientY - bounds.top) / bounds.height - 0.5;
-
-        hero.style.setProperty("--hero-parallax-x", `${offsetX * 18}px`);
-        hero.style.setProperty("--hero-parallax-y", `${offsetY * 18}px`);
-      });
-
-      hero.addEventListener("pointerleave", () => {
-        hero.style.setProperty("--hero-parallax-x", "0px");
-        hero.style.setProperty("--hero-parallax-y", "0px");
-      });
-    }
   }
 });
+
+function initCanvasBackground(prefersReducedMotion) {
+  const canvas = document.querySelector("#site-bg-canvas");
+  if (!canvas) {
+    return;
+  }
+
+  const context = canvas.getContext("2d");
+  if (!context) {
+    return;
+  }
+
+  let width = 0;
+  let height = 0;
+  let animationFrameId = 0;
+
+  const mouse = {
+    x: null,
+    y: null,
+    radius: 155
+  };
+
+  const resizeCanvas = () => {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = Math.floor(width * dpr);
+    canvas.height = Math.floor(height * dpr);
+    context.setTransform(dpr, 0, 0, dpr, 0, 0);
+  };
+
+  const gridGap = width > 1200 ? 54 : 42;
+  const lineColor = "rgba(168, 144, 92, 0.115)";
+  const nodeColor = "rgba(215, 170, 54, 0.16)";
+
+  const distortPoint = (x, y, time) => {
+    const idleWaveX = Math.sin((y * 0.01) + (time * 0.00028)) * 0.85;
+    const idleWaveY = Math.cos((x * 0.008) + (time * 0.00022)) * 0.65;
+
+    let offsetX = idleWaveX;
+    let offsetY = idleWaveY;
+
+    if (mouse.x !== null && mouse.y !== null) {
+      const dx = x - mouse.x;
+      const dy = y - mouse.y;
+      const distance = Math.hypot(dx, dy) || 1;
+
+      if (distance < mouse.radius) {
+        const force = (1 - distance / mouse.radius) ** 1.85;
+        const bend = force * 14;
+        offsetX += (dx / distance) * bend;
+        offsetY += (dy / distance) * bend;
+      }
+    }
+
+    return {
+      x: x + offsetX,
+      y: y + offsetY
+    };
+  };
+
+  const drawGrid = (time) => {
+    context.clearRect(0, 0, width, height);
+    const gap = width > 1200 ? 72 : width > 768 ? 62 : 46;
+    const columns = Math.ceil(width / gap) + 2;
+    const rows = Math.ceil(height / gap) + 2;
+    const points = Array.from({ length: rows }, (_, rowIndex) =>
+      Array.from({ length: columns }, (_, columnIndex) =>
+        distortPoint((columnIndex - 1) * gap, (rowIndex - 1) * gap, time)
+      )
+    );
+
+    context.lineWidth = 0.9;
+    context.strokeStyle = lineColor;
+
+    for (let rowIndex = 0; rowIndex < rows; rowIndex += 1) {
+      context.beginPath();
+      for (let columnIndex = 0; columnIndex < columns; columnIndex += 1) {
+        const point = points[rowIndex][columnIndex];
+        if (columnIndex === 0) {
+          context.moveTo(point.x, point.y);
+        } else {
+          context.lineTo(point.x, point.y);
+        }
+      }
+      context.stroke();
+    }
+
+    for (let columnIndex = 0; columnIndex < columns; columnIndex += 1) {
+      context.beginPath();
+      for (let rowIndex = 0; rowIndex < rows; rowIndex += 1) {
+        const point = points[rowIndex][columnIndex];
+        if (rowIndex === 0) {
+          context.moveTo(point.x, point.y);
+        } else {
+          context.lineTo(point.x, point.y);
+        }
+      }
+      context.stroke();
+    }
+
+    context.fillStyle = nodeColor;
+    for (let rowIndex = 0; rowIndex < rows; rowIndex += 1) {
+      for (let columnIndex = 0; columnIndex < columns; columnIndex += 1) {
+        const point = points[rowIndex][columnIndex];
+        context.beginPath();
+        context.arc(point.x, point.y, 0.8, 0, Math.PI * 2);
+        context.fill();
+      }
+    }
+  };
+
+  const renderStatic = () => {
+    drawGrid(0);
+  };
+
+  const animate = (time) => {
+    drawGrid(time);
+    animationFrameId = window.requestAnimationFrame(animate);
+  };
+
+  resizeCanvas();
+
+  window.addEventListener("resize", () => {
+    resizeCanvas();
+
+    if (prefersReducedMotion) {
+      renderStatic();
+    }
+  });
+
+  window.addEventListener("pointermove", (event) => {
+    mouse.x = event.clientX;
+    mouse.y = event.clientY;
+  });
+
+  window.addEventListener("pointerleave", () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
+
+  if (prefersReducedMotion) {
+    renderStatic();
+    return;
+  }
+
+  window.cancelAnimationFrame(animationFrameId);
+  animationFrameId = window.requestAnimationFrame(animate);
+}

@@ -1,10 +1,27 @@
+@using Microsoft.Extensions.Options
+@using PortfolioSite.Models
+@inject IOptions<SiteModeOptions> SiteModeOptions
+
+@{
+  var hideZzpMeuk = SiteModeOptions.Value.HideZzpMeuk;
+}
+
 <main class="home-main">
   <section class="hero">
-    <div class="hero-grid"></div>
     <div class="container hero-inner">
       <div class="hero-copy">
         <h2 class="pre-heading">Harmen van der Meijden</h2>
-        <h1 class="big-title">Ik help MKB-bedrijven <span>processen te automatiseren</span></h1>
+        @if (hideZzpMeuk)
+        {
+          <h1 class="big-title big-title-hide-zzp">
+            <span class="big-title-line">Product designer gespecialiseerd</span>
+            <span class="big-title-subline"><span>in eenvoud & klantreis.</span></span>
+          </h1>
+        }
+        else
+        {
+          <h1 class="big-title">Ik help MKB-bedrijven <span>processen te automatiseren</span></h1>
+        }
         <p class="large-paragraph intro">
           Ik verbeter klantreizen, haal frictie uit processen en help bedrijven slimmer groeien met software die in de praktijk werkt.
         </p>
@@ -112,118 +129,133 @@
     </div>
   </section>
 
-  <section class="featured-section">
-    <div class="container">
-      <div class="section-intro">
-        <h2>Thema's waar mijn achtergrond in product, software en operatie echt samenkomen.</h2>
+  @if (!hideZzpMeuk)
+  {
+    <section class="featured-section">
+      <div class="container">
+        <div class="section-intro">
+          <h2>Thema's waar mijn achtergrond in product, software en operatie echt samenkomen.</h2>
+        </div>
+        <div class="featured-grid">
+          <article class="featured-card">
+            <div class="featured-copy">
+              <p class="featured-kicker">API-koppelingen</p>
+              <h3>Vooral sterk in software die moet koppelen, synchroniseren en financieel betrouwbaar moet blijven.</h3>
+              <p>Van boekhoudpakketten en controles tot foutafhandeling, uitzonderingen en vertrouwen in data over de hele keten.</p>
+              <a class="text-link" href="/api-koppelingen">Bekijk API-koppelingen</a>
+            </div>
+            <img src="/assets/illustrations/api-flow.svg" alt="Illustratie van API-koppelingen" width="520" height="360">
+          </article>
+          <article class="featured-card featured-card-alt">
+            <div class="featured-copy">
+              <p class="featured-kicker">AI en verandering</p>
+              <h3>Ik kijk niet alleen naar wat technisch kan, maar vooral naar wat een team of organisatie ook echt kan dragen.</h3>
+              <p>Dat maakt AI-integratie en change management voor mij geen losse thema's, maar een logisch verlengstuk van product- en organisatiewerk.</p>
+              <a class="text-link" href="/ai-integratie">Bekijk AI-integratie</a>
+            </div>
+            <img src="/assets/illustrations/ai-orbit.svg" alt="Illustratie van AI-integratie" width="520" height="360">
+          </article>
+        </div>
       </div>
-      <div class="featured-grid">
-        <article class="featured-card">
-          <div class="featured-copy">
-            <p class="featured-kicker">API-koppelingen</p>
-            <h3>Vooral sterk in software die moet koppelen, synchroniseren en financieel betrouwbaar moet blijven.</h3>
-            <p>Van boekhoudpakketten en controles tot foutafhandeling, uitzonderingen en vertrouwen in data over de hele keten.</p>
-            <a class="text-link" href="/api-koppelingen">Bekijk API-koppelingen</a>
-          </div>
-          <img src="/assets/illustrations/api-flow.svg" alt="Illustratie van API-koppelingen" width="520" height="360">
-        </article>
-        <article class="featured-card featured-card-alt">
-          <div class="featured-copy">
-            <p class="featured-kicker">AI en verandering</p>
-            <h3>Ik kijk niet alleen naar wat technisch kan, maar vooral naar wat een team of organisatie ook echt kan dragen.</h3>
-            <p>Dat maakt AI-integratie en change management voor mij geen losse thema's, maar een logisch verlengstuk van product- en organisatiewerk.</p>
-            <a class="text-link" href="/ai-integratie">Bekijk AI-integratie</a>
-          </div>
-          <img src="/assets/illustrations/ai-orbit.svg" alt="Illustratie van AI-integratie" width="520" height="360">
-        </article>
-      </div>
-    </div>
-  </section>
+    </section>
+  }
 
-  <section class="trajectory-section">
-    <div class="container trajectory-card">
-      <div class="trajectory-copy">
-        <p class="trajectory-kicker">Loopbaan en context</p>
-        <h2>De volledige persoonlijke timeline staat op een eigen pagina.</h2>
-        <p>
-          Op de homepage wil je vooral snel begrijpen wie ik ben en waar mijn profiel het verschil maakt.
-          Mijn volledige route van jonge developer tot manager in de dagelijkse praktijk staat daarom apart, met ruimte voor foto's, anekdotes en context.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="expertise-section">
-    <div class="container">
-      <div class="expertise-intro">
-        <h2 class="center-title">Waar ik inhoudelijk verder de diepte in ga</h2>
-        <p class="expertise-lead">
-          Deze pagina's geven meer inzicht in hoe ik denk, werk en waarde lever binnen softwareorganisaties die verder willen dan alleen losse features of een mooier scherm.
-        </p>
-      </div>
-      <div class="work-grid">
-        <a class="work-card" href="/disc">
-          <div class="work-card-content">
-            <h3>DISC-resultaten</h3>
-            <p>Meer inzicht in mijn samenwerkingsstijl, gedragsprofiel en de praktische vertaling naar teams en leiderschap.</p>
-          </div>
-        </a>
-        <a class="work-card" href="/api-koppelingen">
-          <div class="work-card-content">
-            <h3>API-koppelingen met boekhoudsoftware</h3>
-            <p>Hoe ik kijk naar integraties, controles, foutafhandeling en betrouwbaarheid binnen administratieve software.</p>
-          </div>
-        </a>
-        <a class="work-card" href="/ai-integratie">
-          <div class="work-card-content">
-            <h3>AI-integratie in organisaties</h3>
-            <p>Geen mooie praat, maar de vertaalslag naar processen, keuzes in het product en gebruik in teams.</p>
-          </div>
-        </a>
-        <a class="work-card" href="/change-management">
-          <div class="work-card-content">
-            <h3>Change management</h3>
-            <p>Hoe verandering landt in mensen, processen en systemen zonder de levering te laten ontsporen.</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="closing-section" id="contact">
-    <div class="container">
-      <div class="closing-card">
-        <div class="closing-copy">
-          <p class="closing-kicker">Samenwerken</p>
-          <h2>Werk je aan software waar product, techniek en operatie beter op elkaar moeten aansluiten?</h2>
+  @if (!hideZzpMeuk)
+  {
+    <section class="trajectory-section">
+      <div class="container trajectory-card">
+        <div class="trajectory-copy">
+          <p class="trajectory-kicker">Loopbaan en context</p>
+          <h2>De volledige persoonlijke timeline staat op een eigen pagina.</h2>
           <p>
-            Dan is de kans groot dat ik snel zie waar het schuurt en waar de meeste winst zit.
-            Of het nu gaat om een scherper product, betere interne uitvoering of een organisatie die klaar moet zijn voor de volgende fase.
+            Op de homepage wil je vooral snel begrijpen wie ik ben en waar mijn profiel het verschil maakt.
+            Mijn volledige route van jonge developer tot manager in de dagelijkse praktijk staat daarom apart, met ruimte voor foto's, anekdotes en context.
           </p>
         </div>
-        <div class="closing-actions">
-          <a class="button button-primary" href="mailto:info@harmenvandermeijden.nl?subject=Kennismaking%20via%20harmenvandermeijden.nl">Mail Harmen</a>
-          <a class="button button-secondary" href="https://linkedin.com/in/harmen-van-der-meijden">Bekijk LinkedIn</a>
+      </div>
+    </section>
+  }
+
+  @if (!hideZzpMeuk)
+  {
+    <section class="expertise-section">
+      <div class="container">
+        <div class="expertise-intro">
+          <h2 class="center-title">Waar ik inhoudelijk verder de diepte in ga</h2>
+          <p class="expertise-lead">
+            Deze pagina's geven meer inzicht in hoe ik denk, werk en waarde lever binnen softwareorganisaties die verder willen dan alleen losse features of een mooier scherm.
+          </p>
+        </div>
+        <div class="work-grid">
+          <a class="work-card" href="/disc">
+            <div class="work-card-content">
+              <h3>DISC-resultaten</h3>
+              <p>Meer inzicht in mijn samenwerkingsstijl, gedragsprofiel en de praktische vertaling naar teams en leiderschap.</p>
+            </div>
+          </a>
+          <a class="work-card" href="/api-koppelingen">
+            <div class="work-card-content">
+              <h3>API-koppelingen met boekhoudsoftware</h3>
+              <p>Hoe ik kijk naar integraties, controles, foutafhandeling en betrouwbaarheid binnen administratieve software.</p>
+            </div>
+          </a>
+          <a class="work-card" href="/ai-integratie">
+            <div class="work-card-content">
+              <h3>AI-integratie in organisaties</h3>
+              <p>Geen mooie praat, maar de vertaalslag naar processen, keuzes in het product en gebruik in teams.</p>
+            </div>
+          </a>
+          <a class="work-card" href="/change-management">
+            <div class="work-card-content">
+              <h3>Change management</h3>
+              <p>Hoe verandering landt in mensen, processen en systemen zonder de levering te laten ontsporen.</p>
+            </div>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  }
 
-  <section class="footer-contact">
-    <div class="container footer-contact-inner">
-      <div>
-        <p class="footer-name">Harmen van der Meijden</p>
-        <p class="footer-role">Product Designer</p>
-        <ul class="footer-links">
-          <li><a href="mailto:info@harmenvandermeijden.nl">info@harmenvandermeijden.nl</a></li>
-          <li><a href="https://linkedin.com/in/harmen-van-der-meijden">linkedin.com/in/harmen-van-der-meijden</a></li>
-          <li><a href="/loopbaan">Bekijk loopbaan / CV</a></li>
-        </ul>
+  @if (!hideZzpMeuk)
+  {
+    <section class="closing-section" id="contact">
+      <div class="container">
+        <div class="closing-card">
+          <div class="closing-copy">
+            <p class="closing-kicker">Samenwerken</p>
+            <h2>Werk je aan software waar product, techniek en operatie beter op elkaar moeten aansluiten?</h2>
+            <p>
+              Dan is de kans groot dat ik snel zie waar het schuurt en waar de meeste winst zit.
+              Of het nu gaat om een scherper product, betere interne uitvoering of een organisatie die klaar moet zijn voor de volgende fase.
+            </p>
+          </div>
+          <div class="closing-actions">
+            <a class="button button-primary" href="mailto:info@harmenvandermeijden.nl?subject=Kennismaking%20via%20harmenvandermeijden.nl">Mail Harmen</a>
+            <a class="button button-secondary" href="https://linkedin.com/in/harmen-van-der-meijden">Bekijk LinkedIn</a>
+          </div>
+        </div>
       </div>
-      <p class="footer-copy">
-        Werk je aan software waar product, techniek en operatie beter op elkaar moeten aansluiten?
-        Dan is dat precies het soort vraagstuk waar mijn profiel waarde toevoegt.
-      </p>
-    </div>
-  </section>
+    </section>
+  }
+
+  @if (!hideZzpMeuk)
+  {
+    <section class="footer-contact">
+      <div class="container footer-contact-inner">
+        <div>
+          <p class="footer-name">Harmen van der Meijden</p>
+          <p class="footer-role">Product Designer</p>
+          <ul class="footer-links">
+            <li><a href="mailto:info@harmenvandermeijden.nl">info@harmenvandermeijden.nl</a></li>
+            <li><a href="https://linkedin.com/in/harmen-van-der-meijden">linkedin.com/in/harmen-van-der-meijden</a></li>
+            <li><a href="/loopbaan">Bekijk loopbaan / CV</a></li>
+          </ul>
+        </div>
+        <p class="footer-copy">
+          Werk je aan software waar product, techniek en operatie beter op elkaar moeten aansluiten?
+          Dan is dat precies het soort vraagstuk waar mijn profiel waarde toevoegt.
+        </p>
+      </div>
+    </section>
+  }
 </main>

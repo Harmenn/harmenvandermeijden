@@ -1,3 +1,7 @@
+@using Microsoft.Extensions.Options
+@using PortfolioSite.Models
+@inject IOptions<SiteModeOptions> SiteModeOptions
+
 @{
     var title = ViewData["Title"] as string ?? "Harmen van der Meijden";
     var description = ViewData["Description"] as string ?? "Portfolio van Harmen van der Meijden.";
@@ -6,6 +10,7 @@
     var ogDescription = ViewData["OgDescription"] as string ?? description;
     var ogImage = ViewData["OgImage"] as string ?? "https://www.harmenvandermeijden.nl/assets/social/og-harmen-site.png";
     var structuredData = ViewData["StructuredData"] as string;
+    var hideZzpMeuk = SiteModeOptions.Value.HideZzpMeuk;
 }
 <!DOCTYPE html>
 <html lang="nl">
@@ -44,6 +49,7 @@
     }
 </head>
 <body>
+    <canvas id="site-bg-canvas" aria-hidden="true"></canvas>
     <header class="site-header shared-header">
         <div class="container">
             <div class="header-row">
@@ -67,19 +73,25 @@
                 <div class="header-actions" id="site-menu">
                     <nav class="site-nav" aria-label="Hoofdnavigatie">
                         <a class="header-link" href="/">Home</a>
-                        <a class="header-link" href="/loopbaan">Over mij</a>
-                        <details class="nav-dropdown">
-                            <summary class="header-link">Skills</summary>
-                            <div class="nav-dropdown-menu">
-                                <a class="nav-dropdown-link" href="/api-koppelingen">API-koppelingen</a>
-                                <a class="nav-dropdown-link" href="/ai-integratie">AI-integratie</a>
-                                <a class="nav-dropdown-link" href="/change-management">Change management</a>
-                            </div>
-                        </details>
-                        <a class="header-link" href="https://linkedin.com/in/harmen-van-der-meijden">Review</a>
-                        <a class="header-link" href="/#contact">Contact</a>
+                        <a class="header-link" href="https://linkedin.com/in/harmen-van-der-meijden">LinkedIn</a>
+                        @if (!hideZzpMeuk)
+                        {
+                            <a class="header-link" href="/loopbaan">Over mij</a>
+                            <details class="nav-dropdown">
+                                <summary class="header-link">Skills</summary>
+                                <div class="nav-dropdown-menu">
+                                    <a class="nav-dropdown-link" href="/api-koppelingen">API-koppelingen</a>
+                                    <a class="nav-dropdown-link" href="/ai-integratie">AI-integratie</a>
+                                    <a class="nav-dropdown-link" href="/change-management">Change management</a>
+                                </div>
+                            </details>
+                            <a class="header-link" href="/#contact">Contact</a>
+                        }
                     </nav>
-                    <a class="button button-primary header-cta" href="mailto:info@harmenvandermeijden.nl?subject=Vrijblijvende%20kennismaking">Vrijblijvende kennismaking</a>
+                    @if (!hideZzpMeuk)
+                    {
+                        <a class="button button-primary header-cta" href="mailto:info@harmenvandermeijden.nl?subject=Vrijblijvende%20kennismaking">Vrijblijvende kennismaking</a>
+                    }
                 </div>
             </div>
         </div>
