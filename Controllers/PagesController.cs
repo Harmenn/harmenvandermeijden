@@ -67,6 +67,6 @@ public class PagesController : Controller
         ViewData["Canonical"] = canonical;
         ViewData["OgTitle"] = title;
         ViewData["OgDescription"] = description;
-        ViewData["OgImage"] = "https://www.harmenvandermeijden.nl/assets/social/og-harmen-site.png";
+        ViewData["OgImage"] = "https://www.harmenvandermeijden.nl/assets/social/og-harmen-site-v2.png";
     }
 }

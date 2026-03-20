@@ -14,7 +14,7 @@ public class HomeController : Controller
         ViewData["Canonical"] = "https://www.harmenvandermeijden.nl/";
         ViewData["OgTitle"] = "Harmen van der Meijden | Product Designer";
         ViewData["OgDescription"] = "Product Designer met een achtergrond in software engineering, architectuur, administratieve SaaS en operationeel leiderschap.";
-        ViewData["OgImage"] = "https://www.harmenvandermeijden.nl/assets/social/og-harmen-site.png";
+        ViewData["OgImage"] = "https://www.harmenvandermeijden.nl/assets/social/og-harmen-site-v2.png";
         ViewData["StructuredData"] = """
         {
           "@context": "https://schema.org",
@@ -22,7 +22,7 @@ public class HomeController : Controller
           "name": "Harmen van der Meijden",
           "jobTitle": "Product Designer",
           "description": "Product Designer met ervaring in software engineering, software architectuur en administratieve SaaS software.",
-          "image": "https://www.harmenvandermeijden.nl/assets/social/og-harmen-site.png",
+          "image": "https://www.harmenvandermeijden.nl/assets/social/og-harmen-site-v2.png",
           "sameAs": [
             "https://linkedin.com/in/harmen-van-der-meijden"
           ],
