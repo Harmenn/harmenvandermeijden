@@ -3078,6 +3078,18 @@ h5 {
     padding-top: 72px;
   }
 
+  .approach-media,
+  .featured-card img {
+    display: none;
+  }
+
+  .approach-card,
+  .approach-card-reverse,
+  .featured-card {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
   .logo-strip-inner {
     padding: 18px 18px 16px;
     border-radius: 22px;
