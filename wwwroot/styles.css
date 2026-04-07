@@ -4017,7 +4017,7 @@ body > #lightbox {
 }
 
 .cv-hero-copy h1 {
-  max-width: 14.2ch;
+  max-width: 18.5ch;
   margin-top: 0;
   font-size: clamp(2.8rem, 5.2vw, 4.6rem);
   line-height: 0.94;
