@@ -563,12 +563,34 @@ h5 {
   transform: none;
 }
 
+.hero-image-frame::before,
+.hero-image-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
 .hero-image-frame::before {
-  content: none;
+  inset: -3px;
+  background: conic-gradient(
+    from 0deg,
+    rgba(242, 170, 18, 0) 0deg,
+    rgba(242, 170, 18, 0.88) 58deg,
+    rgba(27, 22, 18, 0.9) 110deg,
+    rgba(242, 170, 18, 0.18) 168deg,
+    rgba(242, 170, 18, 0) 240deg,
+    rgba(27, 22, 18, 0.78) 304deg,
+    rgba(242, 170, 18, 0.72) 360deg
+  );
+  filter: blur(0.2px);
+  animation: portraitOrbit 12s linear infinite;
 }
 
 .hero-image-frame::after {
-  content: none;
+  inset: 3px;
+  background: #fff;
 }
 
 .hero-image img {
@@ -4017,7 +4039,7 @@ body > #lightbox {
 }
 
 .cv-hero-copy h1 {
-  max-width: 18.5ch;
+  max-width: 22ch;
   margin-top: 0;
   font-size: clamp(2.8rem, 5.2vw, 4.6rem);
   line-height: 0.94;
@@ -4754,6 +4776,10 @@ body > #lightbox {
   cursor: zoom-in;
 }
 
+.cv-inline-media-button img {
+  border-radius: inherit;
+}
+
 .cv-inline-media-button:focus-visible {
   outline: 3px solid rgba(240, 170, 19, 0.32);
   outline-offset: 3px;
@@ -4797,6 +4823,18 @@ body > #lightbox {
     transform: translateY(-3px);
     border-color: rgba(255, 255, 255, 0.92);
     box-shadow: 0 28px 62px rgba(31, 24, 18, 0.11);
+  }
+}
+
+@keyframes portraitOrbit {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-image-frame::before {
+    animation: none;
   }
 }
 
