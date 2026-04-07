@@ -10,10 +10,10 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         ViewData["Title"] = "Harmen van der Meijden | Product Designer";
-        ViewData["Description"] = "Portfolio van Harmen van der Meijden: Product Designer met een achtergrond in software engineering, architectuur, administratieve SaaS en operationeel leiderschap.";
+        ViewData["Description"] = "Harmen van der Meijden is Product Designer met ervaring in software engineering, architectuur, administratieve SaaS en operationeel leiderschap.";
         ViewData["Canonical"] = "https://www.harmenvandermeijden.nl/";
         ViewData["OgTitle"] = "Harmen van der Meijden | Product Designer";
-        ViewData["OgDescription"] = "Product Designer met een achtergrond in software engineering, architectuur, administratieve SaaS en operationeel leiderschap.";
+        ViewData["OgDescription"] = "Product Designer met ervaring in software engineering, architectuur, administratieve SaaS en operationeel leiderschap.";
         ViewData["OgImage"] = "https://www.harmenvandermeijden.nl/assets/social/og-harmen-site-v2.png";
         ViewData["StructuredData"] = """
         {
@@ -21,7 +21,7 @@ public class HomeController : Controller
           "@type": "Person",
           "name": "Harmen van der Meijden",
           "jobTitle": "Product Designer",
-          "description": "Product Designer met ervaring in software engineering, software architectuur en administratieve SaaS software.",
+          "description": "Product Designer met ervaring in software engineering, software architectuur, administratieve SaaS software en operationeel leiderschap.",
           "image": "https://www.harmenvandermeijden.nl/assets/social/og-harmen-site-v2.png",
           "sameAs": [
             "https://linkedin.com/in/harmen-van-der-meijden"

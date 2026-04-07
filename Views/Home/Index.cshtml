@@ -1,261 +1,323 @@
-@using Microsoft.Extensions.Options
-@using PortfolioSite.Models
-@inject IOptions<SiteModeOptions> SiteModeOptions
-
-@{
-  var hideZzpMeuk = SiteModeOptions.Value.HideZzpMeuk;
-}
-
-<main class="home-main">
-  <section class="hero">
+<main class="home-main home-main--cv">
+  <section class="hero cv-hero" id="profiel">
     <div class="container hero-inner">
-      <div class="hero-copy">
-        <h2 class="pre-heading">Harmen van der Meijden</h2>
-        @if (hideZzpMeuk)
-        {
-          <h1 class="big-title big-title-hide-zzp">
-            <span class="big-title-line">Product designer gespecialiseerd</span>
-            <span class="big-title-subline"><span>in eenvoud & klantreis.</span></span>
-          </h1>
-        }
-        else
-        {
-          <h1 class="big-title">Ik help MKB-bedrijven <span>processen te automatiseren</span></h1>
-        }
-        <p class="large-paragraph intro">
-          Ik verbeter klantreizen, haal frictie uit processen en help bedrijven slimmer groeien met software die in de praktijk werkt.
+      <div class="hero-copy cv-hero-copy" data-reveal-target>
+        <p class="cv-eyebrow">Harmen van der Meijden</p>
+        <h1>Product Designer voor software die echt moet werken.</h1>
+        <p class="cv-lead">
+          Met ervaring in product design, software engineering, architectuur en operationele aansturing. Vooral in
+          omgevingen waar gebruik, techniek en dagelijkse uitvoering direct op elkaar ingrijpen.
         </p>
       </div>
-      <div class="hero-image">
+
+      <div class="hero-image cv-hero-image" data-reveal-target aria-hidden="true">
         <div class="hero-image-frame">
           <img src="/assets/portrait/harmen-portrait-cutout.webp" alt="Portret van Harmen van der Meijden" width="960" height="960">
         </div>
       </div>
+
     </div>
   </section>
 
-  <section class="approach-section">
+  <section class="cv-career" id="cv" aria-labelledby="cv-career-title">
     <div class="container">
-      <div class="approach-stack">
-        <article class="approach-card">
-          <div class="approach-media">
-            <img src="/assets/illustrations/product-design.svg" alt="Illustratie voor probleemanalyse en productdenken" width="520" height="360">
-          </div>
-          <div class="approach-copy">
-            <h3>Breng de vraag terug naar het echte probleem.</h3>
-            <p>
-              Als iemand begint te vertellen wat er gebouwd of aangepast moet worden, wil ik eerst begrijpen waar het werkelijk misgaat.
-              Vaak blijkt de gevraagde oplossing vooral een reactie op een symptoom, terwijl het onderliggende probleem veel dieper zit.
-            </p>
-            <p>
-              Ik heb vaak genoeg meegemaakt dat een gesprek begon met "we moeten dit proces optimaliseren", en eindigde met de conclusie
-              dat dat hele proces eigenlijk niet meer zou moeten bestaan.
-            </p>
-          </div>
-        </article>
-
-        <article class="approach-card approach-card-reverse">
-          <div class="approach-media">
-            <img src="/assets/illustrations/software-ops.svg" alt="Illustratie voor eindgebruikers, processen en operatie" width="520" height="360">
-          </div>
-          <div class="approach-copy">
-            <h3>Begin bij de mensen.</h3>
-            <p>
-              Ik heb in zogeheten 'stuurgroepen' gezeten waar richting werd bepaald, om vervolgens in een late fase te horen dat eindgebruikers
-              niet begrepen wat ze met de opgeleverde oplossing moesten. Dan ben je niet te laat met optimaliseren, maar te laat met luisteren.
-            </p>
-            <p>
-              Daarom wil ik weten hoe mensen echt werken: welke handelingen ze doen, waar dubbel werk ontstaat, waar frustratie zit
-              en wat er in de praktijk nodig is om draagvlak te houden.
-            </p>
-          </div>
-        </article>
-
-        <article class="approach-card">
-          <div class="approach-media">
-            <img src="/assets/illustrations/api-flow.svg" alt="Illustratie voor klantreis, systemen en processtromen" width="520" height="360">
-          </div>
-          <div class="approach-copy">
-            <h3>Kijk niet alleen naar losse software, maar naar de hele route.</h3>
-            <p>
-              Veel frictie ontstaat niet in een enkel scherm, maar in de overgang tussen marketing, sales, operatie en administratie.
-              Dan voelt ieder onderdeel op zichzelf logisch, terwijl het geheel alsnog stroef, foutgevoelig of onduidelijk is.
-            </p>
-            <p>
-              Daarom kijk ik juist naar de keten: van eerste contact op de website tot aanvraag, order, opvolging en intern proces.
-              Alles moet logisch in elkaar grijpen.
-            </p>
-          </div>
-        </article>
-
-        <article class="approach-card approach-card-reverse">
-          <div class="approach-media">
-            <img src="/assets/illustrations/ai-orbit.svg" alt="Illustratie voor AI in teams en processen" width="520" height="360">
-          </div>
-          <div class="approach-copy">
-            <h3>AI werkt pas als het aansluit op de dagelijkse praktijk.</h3>
-            <p>
-              Bedrijven hebben weinig aan een losse AI-demo of een slim idee dat in de praktijk niet wordt gebruikt.
-              De echte winst zit in toepassingen die passen binnen bestaande werkzaamheden en die medewerkers ook daadwerkelijk vertrouwen.
-            </p>
-            <p>
-              Daarom kijk ik niet alleen naar wat technisch kan, maar vooral naar wat een organisatie kan dragen, uitleggen en volhouden.
-            </p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="logo-strip">
-    <div class="container logo-strip-inner">
-      <p>Werkte o.a. aan trajecten binnen</p>
-      <div class="logo-marquee" aria-label="Organisaties en thema's">
-        <div class="logo-track">
-          <div class="logo-list">
-            <img src="/assets/logos/real/independer-purple-logo.svg" alt="Logo van Independer" width="220" height="72">
-            <img src="/assets/logos/real/wehkamp-woordmerk-koraal.png" alt="Logo van wehkamp" width="240" height="40">
-            <img src="/assets/logos/real/brixxonline.png" alt="Logo van BRIXXonline" width="220" height="72">
-            <img src="/assets/logos/real/metafoor-software.svg" alt="Logo van Metafoor Software" width="220" height="72">
-          </div>
-          <div class="logo-list" aria-hidden="true">
-            <img src="/assets/logos/real/independer-purple-logo.svg" alt="" width="220" height="72">
-            <img src="/assets/logos/real/wehkamp-woordmerk-koraal.png" alt="" width="240" height="40">
-            <img src="/assets/logos/real/brixxonline.png" alt="" width="220" height="72">
-            <img src="/assets/logos/real/metafoor-software.svg" alt="" width="220" height="72">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  @if (!hideZzpMeuk)
-  {
-    <section class="featured-section">
-      <div class="container">
-        <div class="section-intro">
-          <h2>Thema's waar mijn achtergrond in product, software en operatie echt samenkomen.</h2>
-        </div>
-        <div class="featured-grid">
-          <article class="featured-card">
-            <div class="featured-copy">
-              <p class="featured-kicker">API-koppelingen</p>
-              <h3>Vooral sterk in software die moet koppelen, synchroniseren en financieel betrouwbaar moet blijven.</h3>
-              <p>Van boekhoudpakketten en controles tot foutafhandeling, uitzonderingen en vertrouwen in data over de hele keten.</p>
-              <a class="text-link" href="/api-koppelingen">Bekijk API-koppelingen</a>
-            </div>
-            <img src="/assets/illustrations/api-flow.svg" alt="Illustratie van API-koppelingen" width="520" height="360">
-          </article>
-          <article class="featured-card featured-card-alt">
-            <div class="featured-copy">
-              <p class="featured-kicker">AI en verandering</p>
-              <h3>Ik kijk niet alleen naar wat technisch kan, maar vooral naar wat een team of organisatie ook echt kan dragen.</h3>
-              <p>Dat maakt AI-integratie en change management voor mij geen losse thema's, maar een logisch verlengstuk van product- en organisatiewerk.</p>
-              <a class="text-link" href="/ai-integratie">Bekijk AI-integratie</a>
-            </div>
-            <img src="/assets/illustrations/ai-orbit.svg" alt="Illustratie van AI-integratie" width="520" height="360">
-          </article>
-        </div>
-      </div>
-    </section>
-  }
-
-  @if (!hideZzpMeuk)
-  {
-    <section class="trajectory-section">
-      <div class="container trajectory-card">
-        <div class="trajectory-copy">
-          <p class="trajectory-kicker">Loopbaan en context</p>
-          <h2>De volledige persoonlijke timeline staat op een eigen pagina.</h2>
-          <p>
-            Op de homepage wil je vooral snel begrijpen wie ik ben en waar mijn profiel het verschil maakt.
-            Mijn volledige route van jonge developer tot manager in de dagelijkse praktijk staat daarom apart, met ruimte voor foto's, anekdotes en context.
-          </p>
-        </div>
-      </div>
-    </section>
-  }
-
-  @if (!hideZzpMeuk)
-  {
-    <section class="expertise-section">
-      <div class="container">
-        <div class="expertise-intro">
-          <h2 class="center-title">Waar ik inhoudelijk verder de diepte in ga</h2>
-          <p class="expertise-lead">
-            Deze pagina's geven meer inzicht in hoe ik denk, werk en waarde lever binnen softwareorganisaties die verder willen dan alleen losse features of een mooier scherm.
-          </p>
-        </div>
-        <div class="work-grid">
-          <a class="work-card" href="/disc">
-            <div class="work-card-content">
-              <h3>DISC-resultaten</h3>
-              <p>Meer inzicht in mijn samenwerkingsstijl, gedragsprofiel en de praktische vertaling naar teams en leiderschap.</p>
-            </div>
-          </a>
-          <a class="work-card" href="/api-koppelingen">
-            <div class="work-card-content">
-              <h3>API-koppelingen met boekhoudsoftware</h3>
-              <p>Hoe ik kijk naar integraties, controles, foutafhandeling en betrouwbaarheid binnen administratieve software.</p>
-            </div>
-          </a>
-          <a class="work-card" href="/ai-integratie">
-            <div class="work-card-content">
-              <h3>AI-integratie in organisaties</h3>
-              <p>Geen mooie praat, maar de vertaalslag naar processen, keuzes in het product en gebruik in teams.</p>
-            </div>
-          </a>
-          <a class="work-card" href="/change-management">
-            <div class="work-card-content">
-              <h3>Change management</h3>
-              <p>Hoe verandering landt in mensen, processen en systemen zonder de levering te laten ontsporen.</p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-  }
-
-  @if (!hideZzpMeuk)
-  {
-    <section class="closing-section" id="contact">
-      <div class="container">
-        <div class="closing-card">
-          <div class="closing-copy">
-            <p class="closing-kicker">Samenwerken</p>
-            <h2>Werk je aan software waar product, techniek en operatie beter op elkaar moeten aansluiten?</h2>
-            <p>
-              Dan is de kans groot dat ik snel zie waar het schuurt en waar de meeste winst zit.
-              Of het nu gaat om een scherper product, betere interne uitvoering of een organisatie die klaar moet zijn voor de volgende fase.
-            </p>
-          </div>
-          <div class="closing-actions">
-            <a class="button button-primary" href="mailto:info@harmenvandermeijden.nl?subject=Kennismaking%20via%20harmenvandermeijden.nl">Mail Harmen</a>
-            <a class="button button-secondary" href="https://linkedin.com/in/harmen-van-der-meijden">Bekijk LinkedIn</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  }
-
-  @if (!hideZzpMeuk)
-  {
-    <section class="footer-contact">
-      <div class="container footer-contact-inner">
-        <div>
-          <p class="footer-name">Harmen van der Meijden</p>
-          <p class="footer-role">Product Designer</p>
-          <ul class="footer-links">
-            <li><a href="mailto:info@harmenvandermeijden.nl">info@harmenvandermeijden.nl</a></li>
-            <li><a href="https://linkedin.com/in/harmen-van-der-meijden">linkedin.com/in/harmen-van-der-meijden</a></li>
-            <li><a href="/loopbaan">Bekijk loopbaan / CV</a></li>
-          </ul>
-        </div>
-        <p class="footer-copy">
-          Werk je aan software waar product, techniek en operatie beter op elkaar moeten aansluiten?
-          Dan is dat precies het soort vraagstuk waar mijn profiel waarde toevoegt.
+      <div class="cv-career-intro" data-reveal-target>
+        <p class="cv-section-kicker">Loopbaan</p>
+        <h2 id="cv-career-title">Ervaring van code naar product en operatie.</h2>
+        <p>
+          De lijn hieronder laat zien hoe mijn werk zich ontwikkelde van bouwen naar product, leiding en operatie.
         </p>
       </div>
-    </section>
-  }
+
+      <div class="cv-timeline" aria-label="Loopbaan van Harmen van der Meijden">
+        <article class="cv-timeline-item" data-reveal-target>
+          <div class="cv-timeline-meta">
+            <span class="cv-timeline-period">2024 - heden</span>
+            <span class="cv-timeline-place">Metafoor Software B.V.</span>
+          </div>
+          <div class="cv-timeline-card">
+            <div class="cv-timeline-card-head">
+              <div class="cv-timeline-heading">
+                <p class="cv-timeline-kicker">Operatie</p>
+                <h3>Operationeel Manager</h3>
+              </div>
+              <div class="cv-employer-logos" aria-label="Werkgever">
+                <img src="/assets/logos/real/metafoor-software.svg" alt="Logo van Metafoor Software" width="180" height="56">
+                <img src="/assets/logos/real/brixxonline.png" alt="Logo van BRIXXonline" width="150" height="40">
+              </div>
+            </div>
+              <p>
+                Door het succes van de software is binnen de holding een zelfstandige BV opgericht om verder te groeien op
+                eigen benen. Binnen die nieuwe organisatie van 18 medewerkers trad ik toe tot de directie als
+                Operationeel Manager, met eindverantwoordelijkheid voor product, support, operatie en
+                klanttevredenheid.
+              </p>
+            <ul class="cv-timeline-points">
+              <li>Verantwoordelijk voor de aansluiting tussen product, support en dagelijkse operatie</li>
+              <li>Sturen op klanttevredenheid, kwaliteit van levering en interne structuur</li>
+              <li>Bouwen aan een zelfstandig softwarebedrijf</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="cv-timeline-item" data-reveal-target>
+          <div class="cv-timeline-meta">
+            <span class="cv-timeline-period">Na de opstartfase</span>
+            <span class="cv-timeline-place">Metafoor Vastgoed en Software</span>
+          </div>
+          <div class="cv-timeline-card">
+            <div class="cv-timeline-card-head">
+              <div class="cv-timeline-heading">
+                <p class="cv-timeline-kicker">Leiding</p>
+                <h3>Development Manager</h3>
+              </div>
+              <div class="cv-employer-logos" aria-label="Werkgever">
+                <img src="/assets/logos/real/metafoor-software.svg" alt="Logo van Metafoor Software" width="180" height="56">
+                <img src="/assets/logos/real/brixxonline.png" alt="Logo van BRIXXonline" width="150" height="40">
+              </div>
+            </div>
+            <p>
+              In deze fase groeide mijn rol van inhoudelijk lead naar bredere managementverantwoordelijkheid. De focus
+              verschoof van zelf bouwen naar teamontwikkeling, structuur aanbrengen en het professioneler organiseren
+              van de softwaretak.
+            </p>
+              <ul class="cv-timeline-points">
+                <li>Leiding over development en technische keuzes</li>
+                <li>Teamgroei, kennisdeling en meer structuur</li>
+                <li>Schakelen tussen software en bedrijfsvoering</li>
+              </ul>
+              <figure class="cv-inline-media">
+                <img
+                  src="/assets/prestaties/metafoor-software-eigen-bv.jpeg"
+                  alt="Metafoor Software als zelfstandig softwarebedrijf binnen de holding">
+              </figure>
+            </div>
+          </article>
+
+        <article class="cv-timeline-item" data-reveal-target>
+          <div class="cv-timeline-meta">
+            <span class="cv-timeline-period">juni 2019 - start</span>
+            <span class="cv-timeline-place">Metafoor Vastgoed en Software</span>
+          </div>
+          <div class="cv-timeline-card">
+            <div class="cv-timeline-card-head">
+              <div class="cv-timeline-heading">
+                <p class="cv-timeline-kicker">Bouwen</p>
+                <h3>Lead Developer</h3>
+              </div>
+              <div class="cv-employer-logos" aria-label="Werkgever">
+                <img src="/assets/logos/real/metafoor-software.svg" alt="Logo van Metafoor Software" width="180" height="56">
+                <img src="/assets/logos/real/brixxonline.png" alt="Logo van BRIXXonline" width="150" height="40">
+              </div>
+            </div>
+            <p>
+              Hier begon het in een ondernemende softwareomgeving met veel groeiruimte, waar product, code en werkwijze
+              nog volop in ontwikkeling waren. Dat ging net zo goed over gebruiksgemak en supportdruk als over techniek.
+            </p>
+            <ul class="cv-timeline-points">
+              <li>Nieuwe features ontwerpen en uitdenken</li>
+              <li>Professionaliseringsslag binnen de softwareafdeling</li>
+              <li>Kandidaat voor het management traineeship van KMM Groep</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="cv-timeline-item" data-reveal-target>
+          <div class="cv-timeline-meta">
+            <span class="cv-timeline-period">jan 2020 - jul 2020</span>
+            <span class="cv-timeline-place">wehkamp</span>
+          </div>
+          <div class="cv-timeline-card">
+            <div class="cv-timeline-card-head">
+              <div class="cv-timeline-heading">
+                <p class="cv-timeline-kicker">Product naar praktijk</p>
+                <h3>Afstudeerstage</h3>
+              </div>
+              <div class="cv-employer-logos" aria-label="Werkgever">
+                <img src="/assets/logos/real/wehkamp-woordmerk-koraal.png" alt="Logo van wehkamp" width="180" height="40">
+              </div>
+            </div>
+            <p>
+              Bij wehkamp werkte ik aan een augmented reality-oplossing waarmee gebruikers make-up konden testen in de
+              app. Het project ging live in Android en iOS; ik studeerde af met een <strong>9,5</strong>. Het liet zien dat een goed
+              idee pas waarde krijgt als het ook echt in software landt.
+            </p>
+            <figure class="cv-inline-media">
+              <img src="/assets/wehkamp-magic-mirror-post.png" alt="Post over de wehkamp Magic Mirror augmented reality-feature" width="1200" height="675">
+            </figure>
+          </div>
+        </article>
+
+        <article class="cv-timeline-item" data-reveal-target>
+          <div class="cv-timeline-meta">
+            <span class="cv-timeline-period">dec 2018 - jul 2020</span>
+            <span class="cv-timeline-place">RYSST / Independer</span>
+          </div>
+          <div class="cv-timeline-card">
+            <div class="cv-timeline-card-head">
+              <div class="cv-timeline-heading">
+                <p class="cv-timeline-kicker">Professionele productteams</p>
+                <h3>Software Engineer bij Independer</h3>
+              </div>
+              <div class="cv-employer-logos" aria-label="Werkgevers">
+                <img src="/assets/logos/real/rysst-logo.png" alt="Logo van RYSST" width="124" height="52">
+                <img src="/assets/logos/real/independer-purple-logo.svg" alt="Logo van Independer" width="170" height="52">
+              </div>
+            </div>
+            <p>
+              Via RYSST werkte ik mee in teams van Independer. Daar deed ik ervaring op in volwassen
+              productontwikkeling, samenwerking in scrumteams en software met directe impact op echte gebruikers.
+            </p>
+            <ul class="cv-timeline-points">
+              <li>Meebouwen aan Angular- en microservices-architectuur</li>
+              <li>Technische intake voor nieuwe medewerkers beoordelen en scrumteams ondersteunen</li>
+              <li>C#, .NET, Angular, Microsoft SQL Server en Cypress</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="cv-timeline-item" data-reveal-target>
+          <div class="cv-timeline-meta">
+            <span class="cv-timeline-period">dec 2018 - jul 2020</span>
+            <span class="cv-timeline-place">RYSST, Zwolle</span>
+          </div>
+          <div class="cv-timeline-card">
+            <div class="cv-timeline-card-head">
+              <div class="cv-timeline-heading">
+                <p class="cv-timeline-kicker">Stage</p>
+                <h3>Webdevelopment Stagiair</h3>
+              </div>
+              <div class="cv-employer-logos" aria-label="Werkgever">
+                <img src="/assets/logos/real/rysst-logo.png" alt="Logo van RYSST" width="124" height="52">
+              </div>
+            </div>
+            <p>
+              Binnen RYSST werkte ik aan mijn HBO-webdevelopmentstage. Daar bouwde ik mee aan een dashboard en deed ik
+              naast mijn opleiding ervaring op met webontwikkeling in teamverband.
+            </p>
+            <ul class="cv-timeline-points">
+              <li>Dashboard ontwikkeld voor bezoekersverwachting via narrowcasting</li>
+              <li>PHP, Laravel, VueJS, MariaDB en scrum</li>
+              <li>Cypress en unit tests toegepast</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="cv-timeline-item" data-reveal-target>
+          <div class="cv-timeline-meta">
+            <span class="cv-timeline-period">okt 2018 - feb 2019</span>
+            <span class="cv-timeline-place">Thales, Hengelo</span>
+          </div>
+          <div class="cv-timeline-card">
+            <div class="cv-timeline-card-head">
+              <div class="cv-timeline-heading">
+                <p class="cv-timeline-kicker">Comakership</p>
+                <h3>Comakership</h3>
+              </div>
+              <div class="cv-employer-logos" aria-label="Werkgever">
+                <img src="/assets/logos/real/thales-logo.png" alt="Logo van Thales" width="170" height="40">
+              </div>
+            </div>
+            <p>
+              Een technische opdracht in een scrumteam van zes studenten, met duidelijke afbakening, teamwerk en een
+              proof of concept als concreet resultaat.
+            </p>
+            <ul class="cv-timeline-points">
+              <li>Koppeling gebouwd met OpenSim</li>
+              <li>Opdracht uitgevoerd in een scrumteam van zes studenten</li>
+              <li>Proof of concept opgeleverd in C# .NET</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="cv-timeline-item" data-reveal-target>
+          <div class="cv-timeline-meta">
+            <span class="cv-timeline-period">okt 2018 - feb 2019</span>
+            <span class="cv-timeline-place">Visual Systems, Dronten</span>
+          </div>
+          <div class="cv-timeline-card">
+            <div class="cv-timeline-card-head">
+              <div class="cv-timeline-heading">
+                <p class="cv-timeline-kicker">MBO-stage</p>
+                <h3>MBO Stagiair</h3>
+              </div>
+              <div class="cv-employer-logos" aria-label="Werkgever">
+                <img src="/assets/logos/real/visual-systems-logo.svg" alt="Logo van Visual Systems" width="48" height="48">
+              </div>
+            </div>
+            <p>
+              Een vroege stage waarin ontwikkeling, onderhoud, contentwerk en online zichtbaarheid samenkwamen in direct
+              praktisch werk.
+            </p>
+            <ul class="cv-timeline-points">
+              <li>WordPress-thema's en plugins ontwikkelen</li>
+              <li>Bestaande CRM-applicaties onderhouden en doorontwikkelen</li>
+              <li>Content schrijven en SEO-optimalisatie uitvoeren</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="cv-timeline-item" data-reveal-target>
+          <div class="cv-timeline-meta">
+            <span class="cv-timeline-period">2016 - 2020</span>
+            <span class="cv-timeline-place">Windesheim / Deltion College Zwolle</span>
+          </div>
+          <div class="cv-timeline-card">
+            <div class="cv-timeline-card-head">
+              <div class="cv-timeline-heading">
+                <p class="cv-timeline-kicker">Opleiding</p>
+                <h3>Opleidingen</h3>
+              </div>
+            </div>
+            <p>
+              Opleidingen waarin de technische basis is gelegd: HBO-ICT Software Engineering, applicatiebouw, databases
+              en werken aan echte producten in teamverband.
+            </p>
+            <ul class="cv-timeline-points">
+              <li>HBO-ICT Software Engineering aan Hogeschool Windesheim</li>
+              <li>Applicatieontwikkeling aan Deltion College Zwolle</li>
+              <li>PRINCE2 Foundation behaald in 2022</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cv-contact" id="contact">
+    <div class="container">
+        <div class="cv-contact-card" data-reveal-target>
+          <div class="cv-contact-copy">
+            <p class="cv-section-kicker">Contact</p>
+            <h2>Ik zit goed op mijn plek, maar sta altijd open voor iets uitzonderlijks.</h2>
+            <p>
+              Een kans die inhoudelijk en menselijk echt klopt laat je natuurlijk niet zomaar voorbijgaan.
+              Een korte kennismaking kan dus altijd.
+            </p>
+          </div>
+
+          <div class="cv-contact-actions">
+            <div class="cv-contact-cta-row">
+              <a class="button button-primary" href="mailto:harmen_meijden@hotmail.com?subject=Kennismaking%20via%20harmenvandermeijden.nl">Mail Harmen</a>
+              <a class="button button-secondary" href="https://linkedin.com/in/harmen-van-der-meijden" target="_blank" rel="noopener noreferrer">Bekijk LinkedIn</a>
+            </div>
+            <ul class="cv-contact-list">
+              <li><a href="mailto:harmen_meijden@hotmail.com">harmen_meijden@hotmail.com</a></li>
+              <li><a href="https://linkedin.com/in/harmen-van-der-meijden" target="_blank" rel="noopener noreferrer">linkedin.com/in/harmen-van-der-meijden</a></li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </section>
 </main>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-backdrop" data-lightbox-close></div>
+  <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Vergrote afbeelding">
+    <button class="lightbox-close" type="button" aria-label="Sluit afbeelding" data-lightbox-close>&times;</button>
+    <figure class="lightbox-figure">
+      <img class="lightbox-image" src="" alt="">
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+  </div>
+</div>

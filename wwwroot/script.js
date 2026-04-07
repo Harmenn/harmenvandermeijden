@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   links.forEach((link) => {
     const href = link.getAttribute("href");
-    if (!href || href.startsWith("#")) {
+    if (!href || href.startsWith("#") || href.includes("#")) {
       return;
     }
 
@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     siteHeader.classList.remove("is-mobile-menu-open");
     mobileNavToggle.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("has-mobile-menu-open");
   };
 
   if (mobileNavToggle && siteHeader && headerActions) {
@@ -76,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const willOpen = !siteHeader.classList.contains("is-mobile-menu-open");
       siteHeader.classList.toggle("is-mobile-menu-open", willOpen);
       mobileNavToggle.setAttribute("aria-expanded", String(willOpen));
+      document.body.classList.toggle("has-mobile-menu-open", willOpen);
     });
 
     document.addEventListener("click", (event) => {
@@ -173,7 +175,11 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   lightboxTriggers.forEach((trigger) => {
-    trigger.addEventListener("click", () => openLightbox(trigger));
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      openLightbox(trigger);
+    });
   });
 
   lightboxCloseButtons.forEach((button) => {
@@ -188,9 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   if (isHomepage && !prefersReducedMotion) {
-    const revealTargets = document.querySelectorAll(
-      ".about-section .section-intro, .approach-section .section-intro, .approach-card, .logo-strip-inner, .featured-section .section-intro, .featured-card, .trajectory-card, .expertise-intro, .work-card, .closing-card, .footer-contact-inner"
-    );
+    const revealTargets = document.querySelectorAll("[data-reveal-target]");
 
     revealTargets.forEach((element, index) => {
       element.setAttribute("data-reveal", "");
