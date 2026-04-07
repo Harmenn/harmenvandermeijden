@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
       toggle.setAttribute("aria-expanded", String(isCollapsed));
     });
   });
-  
+
   const lightbox = document.querySelector("#lightbox");
   const lightboxImage = lightbox?.querySelector(".lightbox-image");
   const lightboxCaption = lightbox?.querySelector(".lightbox-caption");
