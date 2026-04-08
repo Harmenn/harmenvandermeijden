@@ -4062,6 +4062,23 @@ body > #lightbox {
   line-height: 1.62;
 }
 
+.cv-signal-list--skills {
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.cv-signal-list--skills li {
+  min-height: 36px;
+  padding: 0 13px;
+  border-color: rgba(37, 28, 22, 0.1);
+  background: rgba(255, 252, 247, 0.62);
+  box-shadow: 0 10px 24px rgba(36, 28, 20, 0.045);
+  color: #4a3f4d;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
 .cv-hero-support {
   grid-column: 1;
   align-self: start;
@@ -4175,12 +4192,373 @@ body > #lightbox {
   padding: 18px 0 0;
 }
 
-.cv-career {
-  padding: 0;
+.cv-results {
+  padding: 18px 0 76px;
 }
 
-.cv-career > .container {
-  display: block;
+.cv-proof-strip {
+  padding: 18px 0 56px;
+}
+
+.cv-proof-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.cv-proof-point {
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 249, 0.9), rgba(245, 240, 231, 0.82)),
+    radial-gradient(circle at top left, rgba(253, 189, 18, 0.05), transparent 34%);
+  box-shadow: 0 18px 42px rgba(31, 24, 18, 0.06);
+}
+
+.cv-proof-point-title {
+  color: #8f6315;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cv-proof-point p:last-child {
+  margin-top: 10px;
+  color: #413646;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.cv-results-head {
+  max-width: 760px;
+  margin-bottom: 30px;
+}
+
+.cv-results-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.16fr) minmax(0, 0.84fr);
+  gap: 22px;
+}
+
+.cv-result-card {
+  min-height: 100%;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, rgba(255, 251, 244, 0.94), rgba(245, 239, 230, 0.86)),
+    radial-gradient(circle at top left, rgba(253, 189, 18, 0.09), transparent 34%);
+  box-shadow: 0 24px 56px rgba(31, 24, 18, 0.08);
+}
+
+.cv-result-card--feature {
+  grid-row: span 2;
+  padding: 34px 34px 32px;
+}
+
+.cv-result-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(255, 249, 235, 0.92);
+  border: 1px solid rgba(240, 170, 19, 0.16);
+  color: #8b6218;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cv-result-card h3 {
+  max-width: 16ch;
+  margin-top: 16px;
+  font-size: clamp(1.6rem, 2.4vw, 2.5rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.cv-result-card--feature h3 {
+  max-width: 14ch;
+  font-size: clamp(1.95rem, 2.8vw, 3rem);
+}
+
+.cv-result-structure {
+  display: grid;
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.cv-result-structure div {
+  display: grid;
+  gap: 6px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(35, 26, 20, 0.08);
+}
+
+.cv-result-structure dt {
+  color: #8f6315;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cv-result-structure dd {
+  margin: 0;
+  color: #403542;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.cv-experience,
+.cv-education,
+.cv-proof {
+  padding: 0 0 76px;
+}
+
+.cv-experience-head,
+.cv-education-head,
+.cv-proof-head {
+  max-width: 760px;
+  margin-bottom: 30px;
+}
+
+.cv-employer-stack {
+  display: grid;
+  gap: 24px;
+}
+
+.cv-employer-card,
+.cv-education-card,
+.cv-proof-card {
+  min-height: 100%;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, rgba(255, 251, 244, 0.94), rgba(245, 239, 230, 0.86)),
+    radial-gradient(circle at top left, rgba(253, 189, 18, 0.08), transparent 34%);
+  box-shadow: 0 24px 56px rgba(31, 24, 18, 0.08);
+}
+
+.cv-employer-card--feature {
+  padding: 34px;
+}
+
+.cv-employer-topline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.cv-employer-period {
+  color: #67596c;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.cv-employer-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 20px 28px;
+  align-items: start;
+}
+
+.cv-employer-copy h3,
+.cv-education-card h3,
+.cv-proof-card h3 {
+  margin: 0;
+  font-size: clamp(1.6rem, 2.4vw, 2.5rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.cv-employer-copy p,
+.cv-education-card > p,
+.cv-proof-head p {
+  margin-top: 14px;
+  color: #453a49;
+  font-size: 16px;
+  line-height: 1.68;
+}
+
+.cv-employer-head .cv-employer-logos,
+.cv-education-card > .cv-employer-logos {
+  width: auto;
+  justify-content: flex-start;
+  padding-inline: 0;
+}
+
+.cv-employer-head .cv-employer-logos:has(img + img),
+.cv-education-card > .cv-employer-logos:has(img + img) {
+  justify-content: flex-start;
+}
+
+.cv-role-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.cv-role-card {
+  padding: 22px 22px 18px;
+  border: 1px solid rgba(35, 26, 20, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 252, 247, 0.62);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.cv-role-head h4 {
+  margin: 6px 0 0;
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+
+.cv-role-period {
+  color: #8b6218;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cv-role-impact {
+  margin-top: 14px;
+  color: #312830;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.cv-role-points,
+.cv-proof-card ul {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cv-role-points li,
+.cv-proof-card li {
+  position: relative;
+  padding-left: 18px;
+  color: #514756;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.cv-role-points li::before,
+.cv-proof-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f0aa13;
+}
+
+.cv-role-details {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(35, 26, 20, 0.08);
+}
+
+.cv-role-details summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #3a2f3e;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  list-style: none;
+}
+
+.cv-role-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.cv-role-details summary::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-1px);
+  transition: transform 180ms ease;
+}
+
+.cv-role-details[open] summary::after {
+  transform: rotate(-135deg) translateY(-1px);
+}
+
+.cv-role-details-body {
+  margin-top: 16px;
+}
+
+.cv-role-details-body p {
+  color: #453a49;
+  font-size: 15px;
+  line-height: 1.68;
+}
+
+.cv-role-details-body .cv-inline-media,
+.cv-role-details-body .cv-inline-gallery {
+  margin-top: 16px;
+}
+
+.cv-education-grid,
+.cv-proof-grid {
+  display: grid;
+  gap: 22px;
+}
+
+.cv-education-grid {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+}
+
+.cv-education-card--feature {
+  grid-row: span 2;
+}
+
+.cv-education-card--compact {
+  justify-content: start;
+}
+
+.cv-education-card > .cv-employer-logos {
+  margin-top: 18px;
+}
+
+.cv-proof-grid {
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+}
+
+.cv-proof-card--wide {
+  grid-row: span 2;
+}
+
+.cv-proof-card h3 {
+  margin-top: 14px;
+}
+
+.cv-proof-card .cv-inline-media {
+  margin-top: 18px;
 }
 
 .cv-contact {
@@ -4398,6 +4776,21 @@ body > #lightbox {
   font-weight: 800;
 }
 
+.cv-timeline-duration {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(244, 235, 214, 0.88);
+  color: #7e5b18;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .cv-timeline-place {
   color: #6f6477;
   font-size: 15px;
@@ -4412,6 +4805,11 @@ body > #lightbox {
 
 .cv-timeline-item--education .cv-timeline-period {
   color: #5e5165;
+}
+
+.cv-timeline-item--education .cv-timeline-duration {
+  background: rgba(236, 229, 242, 0.96);
+  color: #755b86;
 }
 
 .cv-timeline-item--education .cv-timeline-place {
@@ -5024,6 +5422,35 @@ body > #lightbox {
     margin-bottom: 20px;
   }
 
+  .cv-results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-proof-strip-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-result-card--feature {
+    grid-row: auto;
+    padding: 30px;
+  }
+
+  .cv-result-card h3,
+  .cv-result-card--feature h3 {
+    max-width: none;
+  }
+
+  .cv-employer-head,
+  .cv-education-grid,
+  .cv-proof-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-education-card--feature,
+  .cv-proof-card--wide {
+    grid-row: auto;
+  }
+
   .cv-timeline {
     padding-left: 24px;
     gap: 22px;
@@ -5081,7 +5508,8 @@ body > #lightbox {
   }
 
   .cv-timeline-period,
-  .cv-timeline-place {
+  .cv-timeline-place,
+  .cv-timeline-duration {
     font-size: 13px;
     line-height: 1.25;
   }
@@ -5202,6 +5630,10 @@ body > #lightbox {
   .cv-intro-card,
   .cv-approach-card,
   .cv-topic-card,
+  .cv-result-card,
+  .cv-employer-card,
+  .cv-education-card,
+  .cv-proof-card,
   .cv-timeline-card,
   .cv-contact-card,
   .cv-career-intro {
@@ -5256,7 +5688,12 @@ body > #lightbox {
   .cv-timeline-card h3,
   .cv-intro-card h3,
   .cv-approach-card h3,
-  .cv-topic-card h3 {
+  .cv-topic-card h3,
+  .cv-result-card h3,
+  .cv-employer-copy h3,
+  .cv-education-card h3,
+  .cv-proof-card h3,
+  .cv-role-head h4 {
     font-size: 1.8rem;
   }
 
