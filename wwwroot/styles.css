@@ -5936,18 +5936,19 @@ body > #lightbox {
     min-height: auto;
     gap: 14px;
     transform: none;
+    width: 100%;
   }
 
   .cv-hero-copy h1 {
-    font-size: 2.2rem;
+    font-size: 1.98rem;
     line-height: 0.95;
-    max-width: 11.5ch;
+    max-width: none;
   }
 
   .cv-lead {
-    font-size: 16px;
+    font-size: 14.5px;
     line-height: 1.55;
-    max-width: 28ch;
+    max-width: none;
   }
 
   .cv-expertise-card {
@@ -5963,7 +5964,7 @@ body > #lightbox {
     height: min(32svh, 302px);
     max-width: none;
     min-height: 0;
-    margin: 40px auto 32px;
+    margin: 18px auto 32px;
   }
 
   .cv-hero-support {
