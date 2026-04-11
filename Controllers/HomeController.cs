@@ -9,19 +9,19 @@ public class HomeController : Controller
     [HttpGet("index.html")]
     public IActionResult Index()
     {
-        ViewData["Title"] = "Harmen van der Meijden | Software Architect, Product Owner en Teamlead";
-        ViewData["Description"] = "Harmen van der Meijden verbindt softwarearchitectuur, product ownership en delivery leadership voor software die echt moet werken.";
+        ViewData["Title"] = "Harmen van der Meijden | Software architect, product owner en teamlead";
+        ViewData["Description"] = "Software architect, product owner en teamlead met een achtergrond in C#/.NET, softwarearchitectuur, SaaS en teamleiding. Van Independer en wehkamp naar Metafoor Software, waar hij doorgroeide van engineer naar directielid.";
         ViewData["Canonical"] = "https://www.harmenvandermeijden.nl/";
-        ViewData["OgTitle"] = "Harmen van der Meijden | Software Architect, Product Owner en Teamlead";
-        ViewData["OgDescription"] = "Software architect, product owner en teamlead voor software die echt moet werken.";
+        ViewData["OgTitle"] = "Harmen van der Meijden | Software architect, product owner en teamlead";
+        ViewData["OgDescription"] = "Software architect, product owner en teamlead met een achtergrond in C#/.NET, softwarearchitectuur, SaaS en teamleiding.";
         ViewData["OgImage"] = "https://www.harmenvandermeijden.nl/assets/social/og-harmen-portrait-share.png";
         ViewData["StructuredData"] = """
         {
           "@context": "https://schema.org",
           "@type": "Person",
           "name": "Harmen van der Meijden",
-          "jobTitle": "Software Architect, Product Owner en Teamlead",
-          "description": "Die-hard software engineer die softwarearchitectuur, product ownership en uitvoering verbindt in administratieve SaaS, productontwikkeling en operationeel leiderschap.",
+          "jobTitle": "Software architect, product owner en teamlead",
+          "description": "Die-hard software engineer die product, architectuur en uitvoering verbindt en doorgroeide van engineer naar directielid binnen Metafoor Software.",
           "image": "https://www.harmenvandermeijden.nl/assets/social/og-harmen-portrait-share.png",
           "sameAs": [
             "https://linkedin.com/in/harmen-van-der-meijden"
@@ -31,8 +31,9 @@ public class HomeController : Controller
             "Software Engineering",
             "Software Architecture",
             "C# en .NET",
-            "Administratieve SaaS software",
-            "Delivery leadership",
+            "SaaS productontwikkeling",
+            "Delivery",
+            "Teamleiding",
             "Scrum en Professional Scrum Master I",
             "Operationeel leiderschap"
           ],

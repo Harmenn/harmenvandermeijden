@@ -10,10 +10,10 @@ public class PagesController : Controller
     public IActionResult Loopbaan()
     {
         SetPageMeta(
-            title: "Loopbaan en CV | Harmen van der Meijden",
-            description: "De loopbaan van Harmen van der Meijden: van vroege programmeerdrang via MBO, HBO, Independer en wehkamp naar Metafoor Software en operationeel leiderschap.",
-            canonical: "https://www.harmenvandermeijden.nl/loopbaan");
-        return View();
+            title: "Harmen van der Meijden | Software architect, product owner en teamlead",
+            description: "Software architect, product owner en teamlead met een achtergrond in C#/.NET, softwarearchitectuur, SaaS en teamleiding. Van Independer en wehkamp naar Metafoor Software, waar hij doorgroeide van engineer naar directielid.",
+            canonical: "https://www.harmenvandermeijden.nl/");
+        return View("~/Views/Home/Index.cshtml");
     }
 
     [HttpGet("disc")]
