@@ -559,7 +559,10 @@ h5 {
   overflow: hidden;
   border-radius: 42% 58% 44% 56% / 14% 16% 84% 86%;
   background: #fff;
-  box-shadow: 0 26px 64px rgba(40, 31, 20, 0.1);
+  box-shadow:
+    0 26px 64px rgba(40, 31, 20, 0.1),
+    0 0 0 2px rgba(242, 170, 18, 0.36),
+    0 0 0 10px rgba(242, 170, 18, 0.05);
   transform: none;
 }
 
@@ -573,23 +576,28 @@ h5 {
 }
 
 .hero-image-frame::before {
-  inset: -3px;
+  inset: -6px;
   background: conic-gradient(
-    from 0deg,
-    rgba(242, 170, 18, 0) 0deg,
-    rgba(242, 170, 18, 0.88) 58deg,
-    rgba(27, 22, 18, 0.9) 110deg,
-    rgba(242, 170, 18, 0.18) 168deg,
-    rgba(242, 170, 18, 0) 240deg,
-    rgba(27, 22, 18, 0.78) 304deg,
-    rgba(242, 170, 18, 0.72) 360deg
+    from 0turn,
+    rgba(243, 173, 22, 0.84) 0deg 52deg,
+    rgba(249, 206, 102, 0.98) 52deg 108deg,
+    rgba(244, 183, 42, 0.7) 108deg 164deg,
+    rgba(250, 220, 146, 0.92) 164deg 224deg,
+    rgba(244, 183, 42, 0.74) 224deg 286deg,
+    rgba(249, 206, 102, 0.98) 286deg 336deg,
+    rgba(243, 173, 22, 0.86) 336deg 360deg
   );
-  filter: blur(0.2px);
-  animation: portraitOrbit 12s linear infinite;
+  transform-origin: 50% 50%;
+  transform: rotate(0turn);
+  will-change: transform;
+  backface-visibility: hidden;
+  filter: saturate(1.04) blur(0.12px);
+  opacity: 0.98;
+  animation: portraitOrbit 8.8s linear infinite;
 }
 
 .hero-image-frame::after {
-  inset: 3px;
+  inset: 4px;
   background: #fff;
 }
 
@@ -4051,7 +4059,7 @@ body > #lightbox {
   align-self: center;
   gap: 18px;
   min-height: 100%;
-  transform: translateY(34px);
+  transform: translateY(10px);
 }
 
 .cv-lead {
@@ -4077,6 +4085,119 @@ body > #lightbox {
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.01em;
+}
+
+.cv-skill-board {
+  display: grid;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.cv-skill-board-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cv-skill-board-kicker {
+  color: #8f6315;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cv-skill-board-head span {
+  color: #6a5f6f;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.78;
+}
+
+.cv-skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cv-skill-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "copy score"
+    "meter meter";
+  gap: 9px 12px;
+  align-items: center;
+  width: clamp(220px, 29%, 278px);
+  min-width: 0;
+  padding: 12px 14px 13px;
+  border: 1px solid rgba(37, 28, 22, 0.08);
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 252, 247, 0.78), rgba(248, 242, 232, 0.62));
+  box-shadow:
+    0 10px 20px rgba(36, 28, 20, 0.038),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+.cv-skill-copy {
+  grid-area: copy;
+  min-width: 0;
+}
+
+.cv-skill-copy strong {
+  display: block;
+  color: #231a21;
+  font-size: 13px;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.cv-skill-copy span {
+  display: none;
+}
+
+.cv-skill-score {
+  grid-area: score;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
+  min-height: 26px;
+  padding: 0 9px;
+  border-radius: 999px;
+  background: rgba(31, 24, 18, 0.86);
+  color: #f9f4e8;
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.cv-skill-meter {
+  grid-area: meter;
+  display: block;
+  width: 100%;
+}
+
+.cv-skill-meter::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 7px;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, rgba(245, 173, 20, 0.98) 0 calc(var(--skill-score) * 10%), rgba(226, 220, 210, 0.92) calc(var(--skill-score) * 10%) 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(42, 33, 25, 0.05),
+    inset 0 1px 1px rgba(255, 255, 255, 0.55);
 }
 
 .cv-hero-support {
@@ -4207,13 +4328,13 @@ body > #lightbox {
 }
 
 .cv-proof-point {
-  padding: 18px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.72);
-  border-radius: 22px;
+  padding: 18px 20px 19px;
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-radius: 20px;
   background:
     linear-gradient(180deg, rgba(255, 253, 249, 0.9), rgba(245, 240, 231, 0.82)),
     radial-gradient(circle at top left, rgba(253, 189, 18, 0.05), transparent 34%);
-  box-shadow: 0 18px 42px rgba(31, 24, 18, 0.06);
+  box-shadow: 0 14px 32px rgba(31, 24, 18, 0.05);
 }
 
 .cv-proof-point-title {
@@ -4229,7 +4350,7 @@ body > #lightbox {
   margin-top: 10px;
   color: #413646;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.58;
 }
 
 .cv-results-head {
@@ -4674,6 +4795,36 @@ body > #lightbox {
   margin: 12px auto 56px;
 }
 
+.cv-career-summaryline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(37, 28, 25, 0.08);
+  color: #574c5d;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.cv-career-summaryline strong {
+  color: #20171d;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.cv-career-summaryline span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(255, 250, 243, 0.88);
+  border: 1px solid rgba(38, 29, 24, 0.07);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
 .cv-career-pillbox {
   display: flex;
   flex-wrap: wrap;
@@ -4837,6 +4988,15 @@ body > #lightbox {
 
 .cv-timeline-item--education .cv-timeline-card-head {
   margin-bottom: 14px;
+}
+
+.cv-timeline-item--supporting .cv-timeline-card {
+  padding: 18px 20px 16px;
+  box-shadow: 0 12px 28px rgba(44, 33, 50, 0.05);
+}
+
+.cv-timeline-item--supporting .cv-timeline-meta {
+  opacity: 0.82;
 }
 
 .cv-timeline-item--education .cv-timeline-kicker {
@@ -5044,6 +5204,15 @@ body > #lightbox {
   letter-spacing: -0.02em;
 }
 
+.cv-timeline-roleline {
+  margin-top: 8px;
+  max-width: 50ch;
+  color: #5c4d58;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
 .cv-employer-logos {
   display: flex;
   flex-wrap: nowrap;
@@ -5210,6 +5379,19 @@ body > #lightbox {
   aspect-ratio: 16 / 9;
 }
 
+.cv-inline-gallery--supporting {
+  max-width: 360px;
+  gap: 10px;
+}
+
+.cv-inline-gallery--supporting .cv-inline-media--feature img {
+  aspect-ratio: 3 / 2;
+}
+
+.cv-inline-media--supporting {
+  max-width: 280px;
+}
+
 .cv-inline-media--testimonial img {
   object-fit: cover;
   object-position: top center;
@@ -5225,6 +5407,10 @@ body > #lightbox {
 }
 
 @keyframes portraitOrbit {
+  from {
+    transform: rotate(0turn);
+  }
+
   to {
     transform: rotate(1turn);
   }
@@ -5422,6 +5608,15 @@ body > #lightbox {
     margin-bottom: 20px;
   }
 
+  .cv-career-summaryline {
+    gap: 10px;
+  }
+
+  .cv-career-summaryline span {
+    min-height: 28px;
+    padding: 0 10px;
+  }
+
   .cv-results-grid {
     grid-template-columns: 1fr;
   }
@@ -5520,6 +5715,12 @@ body > #lightbox {
     white-space: normal;
   }
 
+  .cv-timeline-roleline {
+    max-width: none;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
   .cv-timeline-card > p:not(.cv-timeline-kicker) {
     margin-top: 12px;
     font-size: 15px;
@@ -5553,6 +5754,11 @@ body > #lightbox {
   .cv-employer-logos {
     gap: 10px 14px;
     padding-inline: 6px;
+  }
+
+  .cv-inline-gallery--supporting,
+  .cv-inline-media--supporting {
+    max-width: none;
   }
 }
 
@@ -5602,6 +5808,19 @@ body > #lightbox {
     max-width: 28ch;
   }
 
+  .cv-skill-board {
+    gap: 9px;
+  }
+
+  .cv-skill-list {
+    gap: 10px;
+  }
+
+  .cv-skill-item {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
   .cv-hero-image {
     width: min(100%, 322px);
     height: min(32svh, 302px);
@@ -5614,8 +5833,9 @@ body > #lightbox {
     margin-top: -4px;
   }
 
-  .cv-signal-list {
-    margin-top: 16px;
+  .cv-career-summaryline {
+    display: grid;
+    gap: 10px;
   }
 
   .cv-lead,
@@ -5675,14 +5895,14 @@ body > #lightbox {
     font-size: 1.92rem;
   }
 
-  .cv-signal-list {
-    gap: 8px;
+  .cv-skill-board-head {
+    align-items: start;
+    justify-content: space-between;
+    gap: 10px;
   }
 
-  .cv-signal-list li,
-  .cv-career-pillbox span {
-    padding: 0 12px;
-    font-size: 13px;
+  .cv-skill-item {
+    gap: 10px;
   }
 
   .cv-timeline-card h3,
