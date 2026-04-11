@@ -551,54 +551,39 @@ h5 {
   opacity: 0.55;
 }
 
-.hero-image-frame {
+.hero-image-shell {
   position: relative;
-  z-index: 2;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  border-radius: 42% 58% 44% 56% / 14% 16% 84% 86%;
-  background: #fff;
-  box-shadow:
-    0 26px 64px rgba(40, 31, 20, 0.1),
-    0 0 0 2px rgba(242, 170, 18, 0.36),
-    0 0 0 10px rgba(242, 170, 18, 0.05);
-  transform: none;
 }
 
-.hero-image-frame::before,
-.hero-image-frame::after {
-  content: "";
+.hero-image-ring {
   position: absolute;
   inset: 0;
-  border-radius: inherit;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 42% 58% 44% 56% / 14% 16% 84% 86%;
   pointer-events: none;
+  background: linear-gradient(180deg, rgba(246, 183, 30, 0.42), rgba(230, 156, 18, 0.38));
+  box-shadow:
+    0 0 0 1px rgba(244, 174, 24, 0.12),
+    0 0 6px rgba(244, 174, 24, 0.05),
+    0 0 12px rgba(244, 174, 24, 0.025);
+  animation: portraitGlowPulse 5.6s ease-in-out infinite;
 }
 
-.hero-image-frame::before {
-  inset: -6px;
-  background: conic-gradient(
-    from 0turn,
-    rgba(243, 173, 22, 0.84) 0deg 52deg,
-    rgba(249, 206, 102, 0.98) 52deg 108deg,
-    rgba(244, 183, 42, 0.7) 108deg 164deg,
-    rgba(250, 220, 146, 0.92) 164deg 224deg,
-    rgba(244, 183, 42, 0.74) 224deg 286deg,
-    rgba(249, 206, 102, 0.98) 286deg 336deg,
-    rgba(243, 173, 22, 0.86) 336deg 360deg
-  );
-  transform-origin: 50% 50%;
-  transform: rotate(0turn);
-  will-change: transform;
-  backface-visibility: hidden;
-  filter: saturate(1.04) blur(0.12px);
-  opacity: 0.98;
-  animation: portraitOrbit 8.8s linear infinite;
-}
-
-.hero-image-frame::after {
-  inset: 4px;
+.hero-image-frame {
+  position: absolute;
+  inset: 2px;
+  z-index: 2;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 42% 58% 44% 56% / 14% 16% 84% 86%;
   background: #fff;
+  box-shadow: 0 26px 64px rgba(40, 31, 20, 0.1);
+  transform: none;
 }
 
 .hero-image img {
@@ -4768,6 +4753,7 @@ body > #lightbox {
 }
 
 .cv-reference-quote {
+  position: relative;
   margin: 10px 0 0;
   padding: 22px 24px 20px;
   border: 1px solid rgba(35, 26, 20, 0.08);
@@ -4778,6 +4764,28 @@ body > #lightbox {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.85),
     0 16px 34px rgba(31, 24, 18, 0.05);
+}
+
+.cv-reference-quote::before,
+.cv-reference-quote::after {
+  position: absolute;
+  color: rgba(236, 162, 10, 0.34);
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.cv-reference-quote::before {
+  content: "“";
+  top: 16px;
+  left: 16px;
+}
+
+.cv-reference-quote::after {
+  content: "”";
+  right: 16px;
+  bottom: 14px;
 }
 
 .cv-reference-person {
@@ -4810,6 +4818,8 @@ body > #lightbox {
 .cv-reference-body {
   display: grid;
   gap: 14px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .cv-reference-body > p {
@@ -4818,6 +4828,7 @@ body > #lightbox {
   font-size: 15px;
   line-height: 1.8;
   font-weight: 400;
+  font-style: italic;
 }
 
 .cv-contact {
@@ -5548,18 +5559,24 @@ body > #lightbox {
   }
 }
 
-@keyframes portraitOrbit {
+@keyframes portraitGlowPulse {
   from {
-    transform: rotate(0turn);
+    box-shadow:
+      0 0 0 1px rgba(244, 174, 24, 0.09),
+      0 0 5px rgba(244, 174, 24, 0.04),
+      0 0 10px rgba(244, 174, 24, 0.018);
   }
 
   to {
-    transform: rotate(1turn);
+    box-shadow:
+      0 0 0 1px rgba(244, 174, 24, 0.15),
+      0 0 8px rgba(244, 174, 24, 0.06),
+      0 0 16px rgba(244, 174, 24, 0.028);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-image-frame::before {
+  .hero-image-ring {
     animation: none;
   }
 }
