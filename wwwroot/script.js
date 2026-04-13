@@ -194,7 +194,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   if (isHomepage && !prefersReducedMotion) {
-    const revealTargets = document.querySelectorAll("[data-reveal-target]");
+    const revealTargets = Array.from(document.querySelectorAll("[data-reveal-target]"));
+    const leftToRightRevealGroups = Array.from(
+      document.querySelectorAll(".cv-development-grid, .cv-proof-grid, .cv-education-grid")
+    ).map((grid) => ({
+      grid,
+      items: Array.from(grid.querySelectorAll(":scope > [data-reveal-target]"))
+    })).filter((group) => group.items.length > 1);
+
+    const groupedItems = new Set(leftToRightRevealGroups.flatMap((group) => group.items));
+    const standaloneRevealTargets = revealTargets.filter((element) => !groupedItems.has(element));
 
     revealTargets.forEach((element, index) => {
       element.setAttribute("data-reveal", "");
@@ -218,7 +227,36 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
 
-    revealTargets.forEach((element) => revealObserver.observe(element));
+    standaloneRevealTargets.forEach((element) => revealObserver.observe(element));
+
+    const groupedRevealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          const group = leftToRightRevealGroups.find(({ grid }) => grid === entry.target);
+          if (!group) {
+            return;
+          }
+
+          group.items.forEach((item, itemIndex) => {
+            window.setTimeout(() => {
+              item.classList.add("is-visible");
+            }, itemIndex * 110);
+          });
+
+          groupedRevealObserver.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.18,
+        rootMargin: "0px 0px -10% 0px"
+      }
+    );
+
+    leftToRightRevealGroups.forEach(({ grid }) => groupedRevealObserver.observe(grid));
 
   }
 });

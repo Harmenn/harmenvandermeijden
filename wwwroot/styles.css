@@ -4086,11 +4086,14 @@ body > #lightbox {
     linear-gradient(180deg, rgba(255, 253, 249, 0.9), rgba(245, 240, 231, 0.82)),
     radial-gradient(circle at top left, rgba(253, 189, 18, 0.05), transparent 34%);
   box-shadow: 0 18px 40px rgba(31, 24, 18, 0.06);
+  justify-items: center;
+  text-align: center;
 }
 
 .cv-expertise-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
   margin: 0;
   padding: 0;
@@ -4810,6 +4813,7 @@ body > #lightbox {
     radial-gradient(circle at top left, rgba(253, 189, 18, 0.07), transparent 34%);
   box-shadow: 0 24px 62px rgba(31, 24, 18, 0.08);
   margin: 12px auto 56px;
+  text-align: center;
 }
 
 .cv-career-summary {
@@ -4820,6 +4824,8 @@ body > #lightbox {
   font-size: 14.5px;
   line-height: 1.62;
   max-width: 68ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cv-career-pillbox {
